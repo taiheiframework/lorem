@@ -317,7 +317,10 @@ once and call the members on it. Lorem Ipsum is now the text of Latin.
 | `address: String` | `address: Address`; `address.singleLine` is a one-line form |
 | `description` | removed: use `sentences` |
 | `language` (a random `Language`) | `anyLanguage`, one of `Mihon.languages`; `language` is the generator's own |
-| `LoremIpsum.languages` | `Mihon.languages`, the languages with data |
+| `LoremIpsum.languages: Array[Language]`, every language Tsuji knows | `Mihon.languages: List[Language]`, the languages with data, sorted by tag |
+| `sentence`: one to ten words, a capital and a full stop | a range of words per language, with commas, now and then a quoted span, and a full stop, question or exclamation mark in the language's punctuation |
+| `title`: every word capitalised | English alone capitalises every word; other cased languages only the first, and scripts without case none |
+| `email` from the name with everything but ASCII letters removed | from the person's romanised name, so it is ASCII in every language (`wang.wei@…example`) |
 | `city`, `country`, `street`, `phone` from mixed international lists | from the generator's language and its default country; `country` names any country in the language |
 | `phone` (`+32` and nine digits) | the calling code and a national number of the default country |
 | `dev.taihei.i18n.Language` | `dev.taihei.tsuji.Language` |
@@ -327,7 +330,8 @@ once and call the members on it. Lorem Ipsum is now the text of Latin.
 
 The name, city and country lists of 4.x had no recorded source and are gone; the names and
 places of 5.x come from the sources in [docs/data-sources.md](docs/data-sources.md).
-`SampleImages`, `url`, `id`, `password` and the files and dates generators are unchanged.
+`SampleImages`, `url`, `character`, `password`, the file generators and the other date members
+keep their 4.x shape; `id` and `today` changed as the table says.
 
 ## Coming from edo-lorem 3.0.0 or genius-lorem
 

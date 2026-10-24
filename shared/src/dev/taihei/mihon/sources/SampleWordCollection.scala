@@ -3,7 +3,7 @@ package dev.taihei.mihon.sources
 import java.util.Random
 
 // A list of words of which `apply(random)` returns one, drawn from the caller's generator so that a
-// seeded LoremIpsum stays reproducible.
+// seeded Mihon stays reproducible.
 private[mihon] trait SampleWordCollection:
   lazy val words: List[String]
 

@@ -1,6 +1,6 @@
 package dev.taihei.mihon.sources
 
-// One of the word lists LoremIpsum draws from.
+// One of the word lists Mihon draws from.
 private[mihon] object MimeTypes extends SampleWordCollection:
 
   override lazy val words: List[String] = List(

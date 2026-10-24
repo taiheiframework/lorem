@@ -1,6 +1,6 @@
 package dev.taihei.mihon.sources
 
-// One of the word lists LoremIpsum draws from. Every domain is under the .example top-level
+// One of the word lists Mihon draws from. Every domain is under the .example top-level
 // domain, reserved by RFC 2606 for documentation and never delegated: a generated address or URL
 // cannot reach a real host or mailbox.
 private[mihon] object DomainNames extends SampleWordCollection:

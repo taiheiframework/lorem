@@ -92,7 +92,8 @@ the reservation is cited here; elsewhere a number may be real.
   under two items (Arabic with and without vowel marks or tatweel, a name with and without its
   diacritics) is one entry with both weights. Dutch writes the particles of a family name in lower
   case (de Vries). A few names are corrected or left out by hand in `scripts/data/wikinames.py`:
-  an Arabic nickname, Marie as a man's name in French, and the Arabic latin forms Zainab and
+  an Arabic nickname, Maria and Marie as a man's name in seven Latin-script languages (on their own
+  they are the second half of Jean-Marie or Jan Maria), and the Arabic latin forms Zainab and
   Suleiman where the English label has Zeynep and Solomon.
 - **Romanisation.** The `latin` form is computed by rule where one exists: ICAO 9303 for Russian
   (with the national variants for Ukrainian, Bulgarian and Serbian), ELOT 743 for Greek, Hepburn
@@ -117,6 +118,11 @@ the reservation is cited here; elsewhere a number may be real.
   gives Kosovo is left out of Serbia), named in the language (a Serbian Latin label in Cyrillic,
   letter for letter), weighted by population in
   thousands, with their first-level region where the address format names one.
+- **Sizes.** Each language holds at least 1000 words, 100 given names per gender and 120 family
+  names, in at most 80 KB of data, with two exceptions. Latin is written by hand by design: the
+  503 words of Lorem Ipsum, 20 given names per gender and 30 family names. Thai has 92 female
+  given names, the ones that pass the filters above; a later version adds more from a source
+  whose licence has been checked.
 
 ## Downloads
 

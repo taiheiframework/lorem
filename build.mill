@@ -153,7 +153,7 @@ trait TaiheiPublishSettings extends PublishModule {
   def docResources     = Task.Sources()
 
   def pomSettings = PomSettings(
-    description = "Composable, cross-platform fake-data and Lorem Ipsum generator for Scala 3; JVM & JS",
+    description = "Cross-platform sample data for Scala 3 in 25 languages and their scripts: text, names, addresses and phone numbers; JVM & JS",
     organization = "dev.taihei",
     url = "https://github.com/taiheiframework/mihon",
     licenses = Seq(License.`Apache-2.0`),
