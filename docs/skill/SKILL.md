@@ -63,6 +63,9 @@ Both factories take `language` (English by default) and then a `java.time.Clock`
   otherwise assert on shape.
 - `withLanguage` views share one generator: the order of calls across views is part of the
   sequence.
+- `Person` and `Address` compare by value: one seed gives equal people and addresses.
+- `zh-TW`, `zh-HK` and `zh-MO` are Traditional Chinese (`zh-Hant`), never Simplified; `pt-PT` is
+  served by `pt`, whose addresses are Brazilian.
 - `firstName`/`lastName` are `givenName`/`familyName`, `zipCode` is `postalCode`, `address`
   returns an `Address`, `description` is removed, and the random `language` is `anyLanguage`.
 - Dates are `LocalDate` values; Mihon formats none. Format them with Taihei Tsuji.

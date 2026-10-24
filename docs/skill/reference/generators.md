@@ -69,6 +69,9 @@ Both factories and `withLanguage` throw `IllegalArgumentException` for a languag
 | `country: String` | any country's name in the language |
 | `phone: String` | `+`, the calling code and a national number of the default country, ASCII digits; fictional only where the country reserves a range |
 
+`Person` and `Address` are values: equal when every member is equal (a field added in a later
+minor joins equality), with `toString` the full name or the single line, for display.
+
 `Address` (final class, made by `Mihon`): `lines: List[String]` (top to bottom),
 `singleLine: String`, `street`, `postalCode`, `city`, `region: Option[String]` (US, Brazil,
 India), `country` (the name in the language) and `countryCode` (ISO 3166-1 alpha-2).

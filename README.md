@@ -107,11 +107,11 @@ import dev.taihei.tsuji.Language
 
 val mihon = Mihon.secure()      // English, values that do not repeat
 
-mihon.name                      // "Linda Robinson"
-mihon.email                     // "linda.robinson@brightwavehub.example"
+mihon.name                      // a name such as "Linda Robinson"
+mihon.email                     // such as "linda.robinson@brightwavehub.example"
 mihon.paragraph                 // a paragraph of English words
-mihon.address.singleLine        // "180 Cedar Lane, Houston, Texas 77233, United States"
-mihon.phone                     // "+1 537 555-0154", a number reserved for fiction
+mihon.address.singleLine        // such as "180 Cedar Lane, Houston, Texas 77233, United States"
+mihon.phone                     // such as "+1 537 555-0154", a number reserved for fiction
 mihon.localDate                 // a random java.time.LocalDate
 mihon.id                        // a UUID-shaped identifier
 
@@ -131,30 +131,55 @@ another language that shares the same random generator and clock.
 | Tag | Language | Script | Country | Conventions |
 | --- | --- | --- | --- | --- |
 | `ar` | Arabic | Arabic, right to left | Egypt | ، and ؟ |
+| `bg` | Bulgarian | Cyrillic | Bulgaria | „ “, female forms of family names |
+| `de` | German | Latin | Germany | „ “, nouns capitalised |
+| `el` | Greek | Greek | Greece | ; as the question mark, « », female forms of family names |
 | `en` | English | Latin | United States | title case in titles; phone numbers reserved for fiction |
+| `es` | Spanish | Latin | Spain | ¿ ? and ¡ ! |
+| `fr` | French | Latin | France | « », a narrow space before ? and ! |
+| `he` | Hebrew | Hebrew, right to left | Israel | |
+| `hi` | Hindi | Devanagari | India | । as the full stop; states in addresses |
+| `hu` | Hungarian | Latin | Hungary | family name first; city first in addresses |
+| `it` | Italian | Latin | Italy | « » |
 | `ja` | Japanese | kanji and kana | Japan | no spaces, 。、「」, family name first, kana readings |
+| `ko` | Korean | Hangul | South Korea | spaces between words, family name first without a space |
 | `la` | Latin | Latin | Vatican City | Lorem Ipsum |
+| `nl` | Dutch | Latin | Netherlands | ‘ ’, ij capitalised as IJ |
+| `pl` | Polish | Latin | Poland | „ ”, female forms of family names |
+| `pt` | Portuguese | Latin | Brazil | states in addresses |
 | `ru` | Russian | Cyrillic | Russia | « », female forms of family names |
+| `sr-Cyrl` | Serbian | Cyrillic | Serbia | „ ” |
 | `th` | Thai | Thai | Thailand | no spaces within a sentence, no final stop |
+| `tr` | Turkish | Latin | Turkey | i capitalised as İ |
+| `uk` | Ukrainian | Cyrillic | Ukraine | « », the apostrophe in words |
+| `vi` | Vietnamese | Latin | Vietnam | family name first |
 | `zh-Hans` | Chinese (Simplified) | Han | China | no spaces, 。，, family name first |
+| `zh-Hant` | Chinese (Traditional) | Han | Taiwan | no spaces, 。，「」, family name first |
 
 The same seed in several scripts:
 
 ```scala
-Mihon.seeded(1L, Language("ja")).person      // 三浦さくら, latin "Miura Sakura", reading ミウラ サクラ
-Mihon.seeded(1L, Language("ru")).person      // Ольга Емельянова, latin "Olga Emelianova"
-Mihon.seeded(1L, Language("ar")).person      // أمينة الداود
-Mihon.seeded(1L, Language("zh-Hans")).person // 姜慧, latin "Jiang Hui"
+Mihon.seeded(1L, Language("ja")).person      // 三浦めぐみ, latin "Miura Megumi", reading ミウラ メグミ
+Mihon.seeded(1L, Language("ru")).person      // Ольга Жукова, latin "Olga Zhukova"
+Mihon.seeded(1L, Language("el")).person      // Γεωργία Παπαδοπούλου, latin "Georgia Papadopoulou"
+Mihon.seeded(1L, Language("ar")).person      // منى الداود, latin "Mona Al Dawod"
+Mihon.seeded(1L, Language("he")).person      // נירית קציר, latin "Nirit Katzir"
+Mihon.seeded(1L, Language("hi")).person      // प्रतिभा सिंह, latin "Pratibha Singh"
+Mihon.seeded(1L, Language("zh-Hans")).person // 姜佩玉, latin "Jiang Peiyu"
+Mihon.seeded(1L, Language("ko")).person      // 조혜영, latin "Cho Hye-yeong"
 Mihon.seeded(1L, Language("ru")).sentence    // "Время перед а знаю быстрее человека права неделю почти перевести."
 Mihon.seeded(1L, Language("ja")).address.lines // List(日本, 〒873-4446, 京都市中央29-20-14)
+Mihon.seeded(1L, Language("hi")).address.lines // List("179, मुख्य बाज़ार", "अमृतसर 273444", "पंजाब", "भारत")
 ```
 
 The words of a language's text are drawn by how often they are used, so the text has the
 language's script, letters and rhythm, but it means nothing: it is filler, as Lorem Ipsum is.
 
 A factory or `withLanguage` looks a language up by its tag, then by an alias (`zh`, `zh-CN` and
-`zh-SG` are `zh-Hans`), then with subtags stripped from the right, so `en-GB` is served by `en`
-and `ja-JP` by `ja`. A tag that names another script than the one found is refused (`ru-Latn`), and so is a language without data, with an
+`zh-SG` are `zh-Hans`; `zh-TW`, `zh-HK` and `zh-MO` are `zh-Hant`; `sr` and `sr-RS` are
+`sr-Cyrl`), then with subtags stripped from the right, so `en-GB` is served by `en`, `nl-BE` by
+`nl` and `pt-PT` by `pt` (with Brazilian addresses). A tag that names another script than the one
+found is refused (`sr-Latn`, `ru-Latn`), and so is a language without data, with an
 `IllegalArgumentException` that names the tag and the languages there are. With a language
 from outside, ask first:
 
@@ -162,6 +187,9 @@ from outside, ask first:
 val mihon = Mihon.secure(Mihon.resolve(requested).getOrElse(Language.English))
 mihon.language // the language whose data it uses: en for en-GB
 ```
+
+A later minor release may serve a tag that is refused today, or serve it by a closer language
+(`nl-BE` once it has its own data). Pin the Mihon version to rely on `language`.
 
 ### People and addresses
 
@@ -177,7 +205,9 @@ a.lines                              // top to bottom, in the country's format
 a.street; a.city; a.region; a.postalCode; a.country; a.countryCode
 ```
 
-`email` is built from the romanised name, in ASCII, at a domain under the reserved `.example`
+`Person` and `Address` are values: two equal in every member are equal, so one seed gives equal
+people and addresses, and `distinct` and `Set` treat them as values; `toString` is the full
+name or the single line, for display. `email` is built from the romanised name, in ASCII, at a domain under the reserved `.example`
 top-level domain, so it never reaches a real host. Digits are ASCII in every language. Where a
 country reserves phone numbers for fiction (the United States' 555-0100 to 555-0199), `phone`
 uses them; elsewhere a number may be real, so never call or text one.
