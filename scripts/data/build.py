@@ -47,9 +47,11 @@ CITY_PREFIXES = {
 }
 # Wikidata tells some Greek municipalities apart by their region: Περιστέρι Αττικής is Peristeri.
 CITY_SUFFIXES = {"el": [" Αττικής"]}
+CITY_PREFIXES_EXTRA = {"el": ["Δήμος "]}
 NOT_CITIES = {"th": ["เขต", "จังหวัด", "อำเภอ", "แขวง"], "sr-Cyrl": ["Општина "], "es": ["Barrio ", "Distrito "],
               "vi": ["Quận ", "Tỉnh ", "Huyện "]}
-NOT_CITY_ENDINGS = {"ja": ["圏", "地域", "東京都"], "zh-Hant": ["區"], "fr": [" Métropole"], "ko": ["구"]}
+NOT_CITY_ENDINGS = {"ja": ["圏", "地域", "東京都"], "zh-Hant": ["區"], "fr": [" Métropole"],
+                    "ko": ["구", "읍", "면", "도", "국제도시"]}
 NOT_CITY_WORDS = ["métropole", "metropolitana", "metropolitano", "konurbacja", "innenstadt", "великий ", "région",
                   "província", "provincia"]
 # Districts of a city and provinces that Wikidata classes as settlements, by name (written for
@@ -69,7 +71,8 @@ NOT_CITY_NAMES = {
            "Beşiktaş", "Şişli", "Bakırköy", "Esenler", "Gaziosmanpaşa", "Sarıyer", "Avcılar",
            "Başakşehir", "Beylikdüzü", "Sultanbeyli", "Ataşehir", "Tuzla", "Kâğıthane", "Zeytinburnu",
            "Bayrampaşa", "Beyoğlu", "Arnavutköy", "Çekmeköy", "Sancaktepe", "Büyükçekmece",
-           "Gebze", "İzmit", "Adapazarı", "Serdivan", "Efeler", "Menteşe", "Bodrum", "Bağlar",
+           "Serdivan", "Efeler", "Menteşe", "Bağlar", "Altıeylül", "Karesi", "Sarıçam", "Şehzadeler",
+           "Tuşba",
            "Eyyübiye", "Haliliye", "Çukurova", "Kayapınar", "Ortahisar", "İpekyolu", "Sur",
            "Yenişehir", "Artuklu", "Kızıltepe", "Yakutiye", "Palandöken", "Aziziye", "Merkez",
            "Beykoz", "Yunusemre", "Süleymanpaşa", "Altınordu", "Karaköprü", "Konyaaltı"},
@@ -96,6 +99,9 @@ def city_names(tag, cities):
         if any(name.startswith(s + " ") or s.startswith(name + " ") for s in seen):
             continue
         for p in CITY_PREFIXES.get(tag, []):
+            if name.startswith(p) and len(name) > len(p):
+                name = name[len(p):]
+        for p in CITY_PREFIXES_EXTRA.get(tag, []):
             if name.startswith(p) and len(name) > len(p):
                 name = name[len(p):]
         for s in CITY_SUFFIXES.get(tag, []):

@@ -140,7 +140,6 @@
     {"name":"Bert","weight":266},
     {"name":"Hendrik","weight":242},
     {"name":"Gerrit","weight":242},
-    {"name":"Maria","weight":238},
     {"name":"Erik","weight":238},
     {"name":"Maarten","weight":229},
     {"name":"Dick","weight":225},
@@ -193,7 +192,6 @@
     {"name":"Daan","weight":105},
     {"name":"Roel","weight":105},
     {"name":"Vincent","weight":103},
-    {"name":"Marie","weight":61},
     {"name":"Antonius","weight":98},
     {"name":"Christiaan","weight":98},
     {"name":"Ron","weight":97},
@@ -243,7 +241,9 @@
     {"name":"Daniël","ascii":"Daniel","weight":62},
     {"name":"Toon","weight":62},
     {"name":"Leon","weight":62},
-    {"name":"Ruben","weight":61}
+    {"name":"Ruben","weight":61},
+    {"name":"Lex","weight":60},
+    {"name":"Remco","weight":59}
   ],
   "family": [
     {"name":"de Jong","weight":256},

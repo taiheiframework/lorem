@@ -215,6 +215,7 @@
     ["vos",57],
     ["mieux",57],
     ["prendre",57],
+    ["petit",56],
     ["hier",56],
     ["juste",56],
     ["leurs",56],
@@ -531,6 +532,7 @@
     ["mer",32],
     ["marché",32],
     ["rapidement",32],
+    ["gros",31],
     ["nouvelles",31],
     ["photo",31],
     ["façon",31],
@@ -654,6 +656,7 @@
     ["doivent",28],
     ["riche",28],
     ["rêve",28],
+    ["rivière",27],
     ["nombreuses",27],
     ["autour",27],
     ["sac",27],
@@ -715,6 +718,7 @@
     ["choix",26],
     ["cheval",26],
     ["pleurer",26],
+    ["blanc",26],
     ["prochain",26],
     ["journal",26],
     ["gagner",26],
@@ -771,6 +775,7 @@
     ["parles",25],
     ["rentrer",25],
     ["telle",25],
+    ["pierre",25],
     ["voulons",25],
     ["utiliser",25],
     ["avais",25],
@@ -1339,11 +1344,6 @@
     ["examen",18],
     ["levé",18],
     ["sors",18],
-    ["œil",18],
-    ["reposer",18],
-    ["honnête",18],
-    ["contente",18],
-    ["pose",18],
-    ["poème",18]
+    ["œil",18]
   ]
 }

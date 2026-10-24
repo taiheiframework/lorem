@@ -167,7 +167,7 @@ Mihon.seeded(1L, Language("he")).person      // מירב לנקרי, latin "Meir
 Mihon.seeded(1L, Language("hi")).person      // प्रार्थना भारद्वाज, latin "Prarthana Bharadwaj"
 Mihon.seeded(1L, Language("zh-Hans")).person // 彭薇, latin "Peng Wei"
 Mihon.seeded(1L, Language("ko")).person      // 장소희, latin "Jang So-hui"
-Mihon.seeded(1L, Language("ru")).sentence    // "Время перед а знаю быстрее человека права неделю почти перевести."
+Mihon.seeded(1L, Language("ru")).sentence    // "Люди провёл хотели отец нужна пить знакомы себя со игры."
 Mihon.seeded(1L, Language("ja")).address.lines // List("日本", "〒873-4446", "京都市中央29-20-14")
 Mihon.seeded(1L, Language("hi")).address.lines // List("179, मुख्य बाज़ार", "अमृतसर 273444", "पंजाब", "भारत")
 ```

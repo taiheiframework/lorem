@@ -200,7 +200,6 @@
     {"name":"Valerio","weight":235},
     {"name":"Emilio","weight":222},
     {"name":"Adriano","weight":214},
-    {"name":"Maria","weight":214},
     {"name":"Ugo","weight":210},
     {"name":"Antonino","weight":210},
     {"name":"Renzo","weight":209},
@@ -243,7 +242,8 @@
     {"name":"Carmine","weight":119},
     {"name":"Daniel","weight":115},
     {"name":"Giampaolo","weight":113},
-    {"name":"Giampiero","weight":110}
+    {"name":"Giampiero","weight":110},
+    {"name":"Agostino","weight":110}
   ],
   "family": [
     {"name":"Rossi","weight":403},

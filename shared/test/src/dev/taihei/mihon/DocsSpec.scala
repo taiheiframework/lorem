@@ -36,7 +36,7 @@ object DocsSpec extends ZIOSpecDefault:
     },
     test("the sentence and the addresses of the README and the Address Scaladoc") {
       assertTrue(
-        seeded("ru").sentence == "Время перед а знаю быстрее человека права неделю почти перевести.",
+        seeded("ru").sentence == "Люди провёл хотели отец нужна пить знакомы себя со игры.",
         seeded("ja").address.lines == List("日本", "〒873-4446", "京都市中央29-20-14"),
         seeded("hi").address.lines == List("179, मुख्य बाज़ार", "अमृतसर 273444", "पंजाब", "भारत"),
         seeded("en").address.lines == List("7 Lincoln Avenue", "New York City, New York 87344", "United States"),

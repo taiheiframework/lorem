@@ -32,8 +32,9 @@ taken; no sentence, and no span of more than one word, from any source is reprod
   removed. The lists are downloaded into the cache, never committed. Six of the 25 languages
   have no list there: Vietnamese, Ukrainian, Bulgarian, Serbian, Greek and Hebrew.
 - In scripts with case, a word that is capitalised wherever it stands inside a sentence is a
-  proper noun and is removed (German keeps it: it capitalises nouns). The names of the language,
-  and the recurring characters of Tatoeba's sentences, are removed in every script.
+  proper noun and is removed (German keeps it: it capitalises nouns). The recurring characters of
+  Tatoeba's sentences are removed in every script, and in German and the scripts without case
+  the language's names too.
 - Tatoeba's Mandarin sentences are in both Simplified and Traditional characters. A sentence
   counts for `zh-Hans` when it holds a character only Simplified writing uses and none only
   Traditional writing uses, by Unihan's kSimplifiedVariant and kTraditionalVariant; nothing of
@@ -72,7 +73,7 @@ the reservation is cited here; elsewhere a number may be real.
   default country (P27 with P735 or P734; for the Netherlands also of the Kingdom of the
   Netherlands), weighted by that count; only the counts and the names' own labels are
   taken, nothing about any person. A given name is on the female or the male list by the gender
-  of its bearers (both, when at least a quarter are of each). Where a country's people carry too
+  of its bearers (both, when at least a third are of each). Where a country's people carry too
   few name statements (Thailand), name items with a native label in the language (P1705), or
   written in its script (P282), are added with a weight of one. Names longer than two characters
   are left out in Chinese, where they are transcribed foreign names. In Russian, Ukrainian,
@@ -86,8 +87,8 @@ the reservation is cited here; elsewhere a number may be real.
   A Russian, Ukrainian, Bulgarian, Polish or Greek family name gets its female form by rule
   (Петров, Петрова; Παπαδόπουλος, Παπαδοπούλου), and a female form Wikidata lists as a name of its
   own is left out; patronymics (Сергеевна) and the Vietnamese middle names Thị and Văn are not
-  given names. Hebrew is spelled from its own name items, as Russian is; in Hindi, English names
-  in Devanagari (जॉन, John) are left out by their English label. One name
+  given names. Hebrew is spelled from its own name items, as Russian is; in Hindi, the commonest
+  English names in Devanagari (जॉन, John) are left out by their English label. One name
   under two items (Arabic with and without vowel marks or tatweel, a name with and without its
   diacritics) is one entry with both weights. Dutch writes the particles of a family name in lower
   case (de Vries). A few names are corrected or left out by hand in `scripts/data/wikinames.py`:

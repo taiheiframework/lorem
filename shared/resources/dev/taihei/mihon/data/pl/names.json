@@ -212,7 +212,6 @@
     {"name":"Patryk","weight":113},
     {"name":"Leon","weight":110},
     {"name":"Kacper","weight":104},
-    {"name":"Maria","weight":103},
     {"name":"Feliks","weight":98},
     {"name":"Lucjan","weight":89},
     {"name":"Sylwester","weight":88},
@@ -243,7 +242,8 @@
     {"name":"Leopold","weight":34},
     {"name":"Jędrzej","ascii":"Jedrzej","weight":34},
     {"name":"Benedykt","weight":34},
-    {"name":"Florian","weight":34}
+    {"name":"Florian","weight":34},
+    {"name":"Adolf","weight":33}
   ],
   "family": [
     {"name":"Nowak","weight":272},

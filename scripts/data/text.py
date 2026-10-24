@@ -184,6 +184,11 @@ def words(tag, conf, names, script_filter=None, limit=1300):
     cast = CAST | CAST_NATIVE.get(tag, set())
     excluded |= {p + n for n in cast for p in PREFIXES.get(tag, "")}
     excluded |= {n + GENITIVE[tag] for n in cast | set(names)} if tag in GENITIVE else set()
+    # In a cased script, the proper-noun rule below already removes names, and a name such as
+    # Klein or Ben is also a word (klein, ik ben): there only the cast is removed by name, except
+    # in German, whose nouns, and so names, stay capitalised.
+    if cased and tag != "de":
+        excluded = cast | {bare(n) for n in cast} | TOPICAL.get(tag, set())
     lowered_names = {lower(n, tag) for n in excluded} if cased else excluded
     ranked = []
     for key, count in total.most_common():

@@ -108,10 +108,10 @@ ENGLISH_NAMES = {"John", "Mary", "Paul", "Michael", "Peter", "David", "James", "
 FOREIGN_NAMES_LEFT_OUT = {"hi"}
 
 # Names that Wikidata records as given names but that are none: the Vietnamese middle names Thị
-# and Văn, and a nickname ("macaroni"). By list: Marie as a man's name is the second half of
-# Jean-Marie.
+# and Văn, and a nickname ("macaroni"). By list: Maria or Marie as a man's name is the second
+# half of Jean-Marie or Jan Maria.
 NOT_GIVEN = {"vi": {"Thị", "Văn"}, "ar": {"مكرونه", "مكرونة"}}
-NOT_GIVEN_BY_GENDER = {("fr", "male"): {"Marie"}}
+NOT_GIVEN_BY_GENDER = {(t, "male"): {"Maria", "Marie", "María"} for t in ("fr", "nl", "it", "pl", "de", "es", "pt")}
 
 # English labels that give an Arabic name in another language's or a Biblical form.
 LATIN_FIXES = {"ar": {"زينب": "Zainab", "سليمان": "Suleiman"}}
