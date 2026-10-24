@@ -89,8 +89,18 @@ VERSION_GUARD = if ! [[ "$$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$$ ]]; then echo "
 # file when it exists, otherwise from the environment (CI). Never passed as arguments: a
 # command line is readable by every local user in /proc. The file name dates from the Edo
 # Framework, the family's earlier name; it is kept because the maintainers' workstations write
-# the file under that name for every library. RELEASE_ENV=… points elsewhere.
-RELEASE_ENV ?= $(HOME)/.edo-release.env
+# the file under that name for every library. RELEASE_ENV=… on the make command line points
+# elsewhere; like the paths above it is a plain assignment, so an environment variable does not.
+RELEASE_ENV = $(HOME)/.edo-release.env
+# The file is run as shell code inside the credentialed recipe, so it is sourced only when it is
+# a regular file of ours, not a link, that nobody else can read or write: the test PUBLISH_ENV
+# gets. A missing file leaves the environment (CI) to provide the variables.
+SOURCE_RELEASE_ENV = F="$(RELEASE_ENV)"; \
+	if [ -e "$$F" ] || [ -L "$$F" ]; then \
+		if [ ! -f "$$F" ] || [ -L "$$F" ] || [ ! -O "$$F" ] || ! python3 -I -c 'import os, sys; sys.exit(os.stat(sys.argv[1]).st_mode & 0o077)' "$$F"; then \
+			echo "[ERROR] $$F must be a file of yours with mode 600, not a link (the dotfiles write it)"; exit 1; fi; \
+		. "$$F"; \
+	fi
 
 # Kept in the repo (gitignored), not at a predictable path in /tmp that another user could plant.
 RELEASE_STATE = $(CURDIR)/.release-state.json
@@ -299,11 +309,16 @@ publishLocal:
 # is only the direct Central upload of a security release under embargo: Mill signs again here,
 # so a version that went to GitHub Packages must never come through it (the release train takes
 # that one to Central, as the same files). It refuses a version that is not in $(EMBARGO_FILE),
-# and one of whose files GitHub Packages already has.
+# and one of whose files GitHub Packages already has. Before Mill starts it writes a marker next
+# to where the version's bundle would be, as publish-github does: from then on the version may be
+# on Central, so it is never published again from here and release-abort refuses to undo it.
 publish:
 	@set -eo pipefail; \
 	$(TAG_VERSION); \
 	if git ls-files --error-unmatch "$(EMBARGO_FILE)" >/dev/null 2>&1; then echo "[publish] refused: $(EMBARGO_FILE) is tracked"; exit 1; fi; \
+	if [ -e "$$B.CENTRAL_UPLOAD_STARTED" ] || [ -L "$$B.CENTRAL_UPLOAD_STARTED" ]; then \
+	  echo "[publish] refused: the upload of $$VERSION to Maven Central started before ($$(cat "$$B.CENTRAL_UPLOAD_STARTED" 2>/dev/null)), and it is never started again."; \
+	  echo "          Check the Central Portal's deployments and https://repo1.maven.org/maven2/$(firstword $(CENTRAL_PATHS))/$$VERSION/"; exit 1; fi; \
 	if [ -L "$(EMBARGO_FILE)" ] || ! [ -f "$(EMBARGO_FILE)" ] || ! grep -qxF "$$VERSION" "$(EMBARGO_FILE)"; then \
 	  echo "[publish] refused: $$VERSION is not under embargo. A release goes to GitHub Packages with release-finalize,"; \
 	  echo "          and to Maven Central with the release train, as the same signed files."; exit 1; fi; \
@@ -319,25 +334,31 @@ publish:
 	./mill shutdown >/dev/null 2>&1 || true; \
 	trap './mill shutdown >/dev/null 2>&1 || true' EXIT; \
 	$(MODULE_GUARD); \
-	if [ -f "$(RELEASE_ENV)" ]; then . "$(RELEASE_ENV)"; fi; \
+	$(SOURCE_RELEASE_ENV); \
 	for V in MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD MILL_PGP_SECRET_BASE64 MILL_PGP_PASSPHRASE; do \
 	  if [ -z "$${!V}" ]; then echo "[publish] $$V is not set ($(RELEASE_ENV) or the environment)"; exit 1; fi; \
 	done; \
 	VERSION=$$(./mill --no-daemon show release.gitVersion | tr -d '"'); \
 	case "$$VERSION" in *-SNAPSHOT) echo "[publish] refused: $$VERSION is not a release (an exact v-tag on a clean tree)"; exit 1;; esac; \
 	$(VERSION_GUARD); \
-	echo "[publish] $$VERSION to Maven Central"; \
+	mkdir -p "$(BUNDLES)"; \
+	echo "$$(date -u +%Y-%m-%dT%H:%M:%SZ) to Maven Central" > "$$B.CENTRAL_UPLOAD_STARTED"; \
+	echo "[publish] $$VERSION to Maven Central: from here on the version may be final"; \
 	./mill --no-daemon mill.javalib.SonatypeCentralPublishModule/ --bundleName "$(BUNDLE_PREFIX)-$$VERSION"
 
 # The same bundle, signed, written to out/ instead of uploaded: what Central would receive. Mill
 # names a bundle only for a release version, so a SNAPSHOT dry run writes it unnamed.
+# Only MILL_TESTS_PUBLISH_DRY_RUN, a test hook of Mill's, keeps this from uploading, and
+# release-finalize builds its bundle here: the Central token is unset before Mill starts, so a Mill
+# that no longer honours the hook fails to authenticate instead of publishing to Central.
 publish-dry-run:
 	@set -e; \
 	$(STRAY_GUARD); \
 	./mill shutdown >/dev/null 2>&1 || true; \
 	trap './mill shutdown >/dev/null 2>&1 || true' EXIT; \
 	$(MODULE_GUARD); \
-	if [ -f "$(RELEASE_ENV)" ]; then . "$(RELEASE_ENV)"; fi; \
+	$(SOURCE_RELEASE_ENV); \
+	unset MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD; \
 	VERSION=$$(./mill --no-daemon show release.gitVersion | tr -d '"'); \
 	case "$$VERSION" in *-SNAPSHOT) BUNDLE=();; *) BUNDLE=(--bundleName "$(BUNDLE_PREFIX)-$$VERSION");; esac; \
 	MILL_TESTS_PUBLISH_DRY_RUN=1 ./mill --no-daemon mill.javalib.SonatypeCentralPublishModule/ "$${BUNDLE[@]}"; \
@@ -789,6 +810,11 @@ release-abort:
 		NEW=$$(python3 -I -c 'import json, sys; print(json.load(open(sys.argv[1]))["newVersion"])' "$(RELEASE_STATE)"); \
 		if ! [[ "$$NEW" =~ ^[0-9]+\.[0-9]+\.[0-9]+$$ ]]; then echo "[ERROR] Not a version: $$NEW"; exit 1; fi; \
 		B="$(BUNDLES)/$(BUNDLE_PREFIX)-$$NEW"; \
+		if [ -e "$$B.CENTRAL_UPLOAD_STARTED" ] || [ -L "$$B.CENTRAL_UPLOAD_STARTED" ]; then \
+			echo "[ERROR] the upload of v$$NEW to Maven Central started ($$(cat "$$B.CENTRAL_UPLOAD_STARTED" 2>/dev/null)): the version may be final there."; \
+			echo "        Its tag stays and nothing was undone. Check the Central Portal's deployments and"; \
+			echo "        https://repo1.maven.org/maven2/$(firstword $(CENTRAL_PATHS))/$$NEW/; the CTO and the CISO decide what follows."; exit 1; \
+		fi; \
 		if [ -e "$$B/UPLOAD_STARTED" ]; then \
 			echo "[ERROR] files of v$$NEW reached GitHub Packages ($$(cat "$$B/UPLOAD_STARTED")): the version is final."; \
 			echo "        It is never deleted or replaced, and its tag and bundle stay. Nothing was undone."; \
