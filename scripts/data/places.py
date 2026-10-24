@@ -64,8 +64,9 @@ def cities(country, qid, lang, ok, limit=100):
     region = ""
     if region_class:
         classes = " ".join("wd:" + c for c in region_class)
+        # A current state only: Bhopal is in Madhya Pradesh, not in the Bhopal State of 1949.
         region = f"""OPTIONAL {{ VALUES ?rc {{ {classes} }} ?item wdt:P131* ?r . ?r wdt:P31 ?rc; rdfs:label ?region .
-                                FILTER(LANG(?region) = "{lang}") }}"""
+                                FILTER(LANG(?region) = "{lang}") FILTER NOT EXISTS {{ ?r wdt:P576 ?end }} }}"""
     labels = sparql(f"city-labels-{country}-{lang}", f"""
         SELECT ?item ?label {"?region" if region_class else ""} WHERE {{
           VALUES ?item {{ {values} }}

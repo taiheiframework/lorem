@@ -9,9 +9,9 @@ import dev.taihei.mihon.data.Form
  *
  * {{{
  * val ja = Mihon.seeded(1L, Language("ja")).person
- * ja.fullName // "三浦めぐみ": family name first, no space
- * ja.reading  // Some("ミウラ メグミ")
- * ja.latin    // "Miura Megumi"
+ * ja.fullName // "田中さちこ": family name first, no space
+ * ja.reading  // Some("タナカ サチコ")
+ * ja.latin    // "Tanaka Sachiko"
  * }}}
  */
 final class Person private[mihon] (

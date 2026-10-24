@@ -159,16 +159,16 @@ another language that shares the same random generator and clock.
 The same seed in several scripts:
 
 ```scala
-Mihon.seeded(1L, Language("ja")).person      // 三浦めぐみ, latin "Miura Megumi", reading ミウラ メグミ
-Mihon.seeded(1L, Language("ru")).person      // Ольга Жукова, latin "Olga Zhukova"
-Mihon.seeded(1L, Language("el")).person      // Γεωργία Παπαδοπούλου, latin "Georgia Papadopoulou"
-Mihon.seeded(1L, Language("ar")).person      // منى الداود, latin "Mona Al Dawod"
-Mihon.seeded(1L, Language("he")).person      // נירית קציר, latin "Nirit Katzir"
-Mihon.seeded(1L, Language("hi")).person      // प्रतिभा सिंह, latin "Pratibha Singh"
-Mihon.seeded(1L, Language("zh-Hans")).person // 姜佩玉, latin "Jiang Peiyu"
-Mihon.seeded(1L, Language("ko")).person      // 조혜영, latin "Cho Hye-yeong"
+Mihon.seeded(1L, Language("ja")).person      // 田中さちこ, latin "Tanaka Sachiko", reading タナカ サチコ
+Mihon.seeded(1L, Language("ru")).person      // Людмила Фомина, latin "Liudmila Fomina"
+Mihon.seeded(1L, Language("el")).person      // Βασιλική Κοκολάκη, latin "Vasiliki Kokolaki"
+Mihon.seeded(1L, Language("ar")).person      // نادية إبراهيم, latin "Nadia Ibrahim"
+Mihon.seeded(1L, Language("he")).person      // מירב לנקרי, latin "Meirav Lankri"
+Mihon.seeded(1L, Language("hi")).person      // प्रार्थना भारद्वाज, latin "Prarthana Bharadwaj"
+Mihon.seeded(1L, Language("zh-Hans")).person // 彭薇, latin "Peng Wei"
+Mihon.seeded(1L, Language("ko")).person      // 장소희, latin "Jang So-hui"
 Mihon.seeded(1L, Language("ru")).sentence    // "Время перед а знаю быстрее человека права неделю почти перевести."
-Mihon.seeded(1L, Language("ja")).address.lines // List(日本, 〒873-4446, 京都市中央29-20-14)
+Mihon.seeded(1L, Language("ja")).address.lines // List("日本", "〒873-4446", "京都市中央29-20-14")
 Mihon.seeded(1L, Language("hi")).address.lines // List("179, मुख्य बाज़ार", "अमृतसर 273444", "पंजाब", "भारत")
 ```
 
@@ -197,7 +197,7 @@ A later minor release may serve a tag that is refused today, or serve it by a cl
 val p = Mihon.seeded(1L).person
 p.givenName; p.familyName; p.gender  // Gender.Female or Gender.Male
 p.fullName                           // in the language's name order
-p.latin                              // romanised; the same as fullName in Latin script
+p.latin                              // romanised (pinyin in both Chinese); fullName in Latin script
 p.reading                            // the kana reading in Japanese, None elsewhere
 
 val a = Mihon.seeded(1L).address
@@ -207,8 +207,8 @@ a.street; a.city; a.region; a.postalCode; a.country; a.countryCode
 
 `Person` and `Address` are values: two equal in every member are equal, so one seed gives equal
 people and addresses, and `distinct` and `Set` treat them as values; `toString` is the full
-name or the single line, for display. `email` is built from the romanised name, in ASCII, at a domain under the reserved `.example`
-top-level domain, so it never reaches a real host. Digits are ASCII in every language. Where a
+name or the single line, for display. `email` is built from the romanised name, in ASCII, at a
+domain under the reserved `.example` top-level domain, so it never reaches a real host. Digits are ASCII in every language. Where a
 country reserves phone numbers for fiction (the United States' 555-0100 to 555-0199), `phone`
 uses them; elsewhere a number may be real, so never call or text one.
 

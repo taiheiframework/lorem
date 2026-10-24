@@ -29,11 +29,9 @@
     {"name":"Hódmezővásárhely","weight":41},
     {"name":"Dunaújváros","weight":40},
     {"name":"Szigetszentmiklós","weight":40},
-    {"name":"Rákospalota","weight":38},
     {"name":"Cegléd","weight":35},
     {"name":"Vác","weight":33},
     {"name":"Mosonmagyaróvár","weight":33},
-    {"name":"Pestszenterzsébet","weight":33},
     {"name":"Gödöllő","weight":32},
     {"name":"Baja","weight":31},
     {"name":"Salgótarján","weight":29},
@@ -104,7 +102,9 @@
     {"name":"Gárdony","weight":13},
     {"name":"Sárvár","weight":13},
     {"name":"Tapolca","weight":13},
-    {"name":"Balassagyarmat","weight":13}
+    {"name":"Balassagyarmat","weight":13},
+    {"name":"Kistarcsa","weight":13},
+    {"name":"Kiskőrös","weight":13}
   ],
   "streets": ["{family} utca {number}.", "{family} tér {small}.", "Kossuth Lajos utca {number}.", "Petőfi Sándor utca {number}.", "Rákóczi út {number}.", "Fő utca {number}.", "Ady Endre utca {number}.", "Dózsa György út {number}."],
   "phone": "+36 N0 ### ####",

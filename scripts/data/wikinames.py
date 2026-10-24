@@ -6,6 +6,7 @@ language is the name, the English label its romanised form unless a rule in roma
 """
 
 import collections
+import unicodedata
 
 import romanize
 import text
@@ -20,12 +21,21 @@ def _qid(uri):
     return uri.rsplit("/", 1)[1]
 
 
+# The citizenships whose people a country's names are counted over: many Dutch people on Wikidata
+# are citizens of the Kingdom of the Netherlands rather than of the Netherlands.
+CITIZENSHIPS = {"NL": ["Q55", "Q29999"]}
+# People born since 1920 only, so that the names are those of the living rather than of history.
+BORN_SINCE = '?p wdt:P569 ?born . FILTER(?born >= "1920-01-01T00:00:00Z"^^xsd:dateTime)'
+
+
 def _counts(kind, country, prop, by_gender):
-    qid = COUNTRY_QID[country]
+    values = " ".join("wd:" + q for q in CITIZENSHIPS.get(country, [COUNTRY_QID[country]]))
     if by_gender:
         rows = sparql(f"{kind}-{country}", f"""
             SELECT ?name ?g (COUNT(?p) AS ?c) WHERE {{
-              ?p wdt:P27 wd:{qid}; wdt:{prop} ?name; wdt:P21 ?g .
+              VALUES ?country {{ {values} }}
+              ?p wdt:P27 ?country; wdt:{prop} ?name; wdt:P21 ?g .
+              {BORN_SINCE}
               FILTER(?g IN (wd:Q6581072, wd:Q6581097))
             }} GROUP BY ?name ?g ORDER BY DESC(?c) LIMIT 1500""")
         out = collections.defaultdict(lambda: [0, 0])
@@ -33,8 +43,11 @@ def _counts(kind, country, prop, by_gender):
             out[_qid(r["name"])][0 if r["g"] == FEMALE else 1] += int(r["c"])
         return out
     rows = sparql(f"{kind}-{country}", f"""
-        SELECT ?name (COUNT(?p) AS ?c) WHERE {{ ?p wdt:P27 wd:{qid}; wdt:{prop} ?name }}
-        GROUP BY ?name ORDER BY DESC(?c) LIMIT 800""")
+        SELECT ?name (COUNT(?p) AS ?c) WHERE {{
+          VALUES ?country {{ {values} }}
+          ?p wdt:P27 ?country; wdt:{prop} ?name .
+          {BORN_SINCE}
+        }} GROUP BY ?name ORDER BY DESC(?c) LIMIT 800""")
     return {_qid(r["name"]): int(r["c"]) for r in rows}
 
 
@@ -88,8 +101,35 @@ SCRIPT_ITEMS = {"Latn": {"Q8229"}, "Cyrl": {"Q8209"}, "Grek": {"Q8216"}, "Arab":
 # native name.
 STRICT_WRITING = {"ru", "uk", "bg", "el", "th", "he"}
 
-# Vietnamese middle names that Wikidata records as given names: Thị for women, Văn for men.
-NOT_GIVEN = {"vi": {"Thị", "Văn"}}
+# English given names written in another script (जॉन, John), which Wikidata counts for people of
+# India but which are no Hindi names; left out by their English label.
+ENGLISH_NAMES = {"John", "Mary", "Paul", "Michael", "Peter", "David", "James", "George", "Thomas",
+                 "William", "Robert", "Richard", "Joseph", "Charles", "Elizabeth", "Anne", "Margaret"}
+FOREIGN_NAMES_LEFT_OUT = {"hi"}
+
+# Names that Wikidata records as given names but that are none: the Vietnamese middle names Thị
+# and Văn, and a nickname ("macaroni"). By list: Marie as a man's name is the second half of
+# Jean-Marie.
+NOT_GIVEN = {"vi": {"Thị", "Văn"}, "ar": {"مكرونه", "مكرونة"}}
+NOT_GIVEN_BY_GENDER = {("fr", "male"): {"Marie"}}
+
+# English labels that give an Arabic name in another language's or a Biblical form.
+LATIN_FIXES = {"ar": {"زينب": "Zainab", "سليمان": "Suleiman"}}
+
+# Dutch writes the particles of a family name in lower case after a given name: Jan de Vries.
+DUTCH_PARTICLES = ("Van der ", "Van den ", "Van de ", "Van ", "De ", "Den ", "Ter ", "Ten ", "Het ", "'T ")
+
+
+def _native_form(tag, name):
+    """The name as the data keeps it: Arabic without vowel marks or tatweel, so that مُصطفى and
+    مصطفى are one name; Dutch particles in lower case."""
+    if tag == "ar":
+        name = "".join(c for c in name if not unicodedata.combining(c) and c != "\u0640")
+    if tag == "nl":
+        for p in DUTCH_PARTICLES:
+            if name.startswith(p):
+                return p.lower() + name[len(p):]
+    return name
 
 # The letters each Cyrillic alphabet has: a Russian name with the Serbian Ј is no Russian name.
 CYRILLIC_LETTERS = {
@@ -239,7 +279,7 @@ def given(tag, conf, limit=120):
     lists = {"female": [], "male": []}
     for item, (f, m) in sorted(counts.items(), key=lambda kv: (-sum(kv[1]), kv[0])):
         r = labels.get(item, {})
-        name = r.get("label")
+        name = _native_form(tag, r["label"]) if r.get("label") else None
         if not name or not _name_ok(name, script, tag, r.get("systems", set())):
             continue
         if script in ("Hans", "Hant") and len(name) > 2:
@@ -251,15 +291,40 @@ def given(tag, conf, limit=120):
             continue  # a patronymic recorded as a given name, such as Сергеевна
         if name in NOT_GIVEN.get(tag, set()):
             continue
+        if tag in FOREIGN_NAMES_LEFT_OUT and r.get("en") in ENGLISH_NAMES:
+            continue
         if script in ("Hans", "Hant") and unihan.pinyin(name, surname=False) != entry_latin(r.get("en")):
             continue  # an English name in characters (辛迪, Cindy), whose label is no pinyin
+        if name in LATIN_FIXES.get(tag, {}):
+            entry["latin"] = LATIN_FIXES[tag][name]
         total = f + m
         for key, n in (("female", f), ("male", m)):
+            if name in NOT_GIVEN_BY_GENDER.get((tag, key), set()):
+                continue
             # On both lists only when at least a third of its bearers are of each gender:
             # gender statements on Wikidata are not free of faults.
-            if n * 3 >= total and len(lists[key]) < limit and name not in {e["name"] for e in lists[key]}:
+            if n * 3 < total:
+                continue
+            same = next((e for e in lists[key] if e["name"] == name), None)
+            if same:
+                same["weight"] += n  # one name under two items, such as مُصطفى and مصطفى
+            elif len(lists[key]) < limit:
                 lists[key].append(dict(entry, weight=n))
-    return lists
+    return {k: _merge_unaccented(v) for k, v in lists.items()}
+
+
+def _merge_unaccented(entries):
+    """A name written without its diacritics (Jose beside José, Nguyen beside Nguyễn) is the
+    same name: its weight goes to the accented one."""
+    by_name = {e["name"]: e for e in entries}
+    out = []
+    for e in entries:
+        accented = [o for o in entries if o is not e and o["name"] != e["name"] and romanize.ascii_fold(o["name"]) == e["name"]]
+        if accented:
+            by_name[accented[0]["name"]]["weight"] += e["weight"]
+        else:
+            out.append(e)
+    return out
 
 
 PATRONYMIC = {t: ("вна", "вич", "чна", "ична") for t in ("ru", "uk", "bg", "sr-Cyrl")}
@@ -299,13 +364,18 @@ def family(tag, conf, limit=160):
     out, seen = [], set()
     for item, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])):
         r = labels.get(item, {})
-        name = r.get("label")
+        name = _native_form(tag, r["label"]) if r.get("label") else None
+        if name in seen:
+            next(e for e in out if e["name"] == name)["weight"] += n
+            continue
         if not name or name in seen or not _name_ok(name, script, tag, r.get("systems", set())):
             continue
         if script in ("Hans", "Hant") and len(name) > 2:
             continue  # a transcribed foreign name
         if _is_female_form(tag, name):
             continue  # Петрова is the female form of Петров, not a family name of its own
+        if tag in FOREIGN_NAMES_LEFT_OUT and r.get("en") in ENGLISH_NAMES:
+            continue
         entry = _form(tag, script, name, r.get("en"), r.get("kana"), family_name=True)
         if not entry:
             continue
@@ -317,11 +387,12 @@ def family(tag, conf, limit=160):
                     form = {"name": female, **({"ascii": romanize.ascii_fold(female)} if romanize.ascii_fold(female) != female else {})}
                 if form:
                     entry["female"] = form
-        out.append(dict(entry, weight=n))
-        seen.add(name)
-        if len(out) == limit:
-            break
-    return out
+        if name in LATIN_FIXES.get(tag, {}):
+            entry["latin"] = LATIN_FIXES[tag][name]
+        if len(out) < limit:
+            out.append(dict(entry, weight=n))
+            seen.add(name)
+    return _merge_unaccented(out)
 
 
 def names(tag, conf):

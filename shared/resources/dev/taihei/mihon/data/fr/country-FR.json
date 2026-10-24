@@ -106,7 +106,7 @@
     {"name":"Jeumont","weight":10},
     {"name":"Neuville-en-Ferrain","weight":10}
   ],
-  "streets": ["{number} rue {given} {family}", "{number} avenue {given} {family}", "{number} boulevard {family}", "{number} rue de la Gare", "{number} rue du Moulin", "{number} place de l’Église", "{number} rue de la République", "{number} grande rue", "{number} rue des Écoles", "{number} chemin des Vignes"],
+  "streets": ["{number} rue {given} {family}", "{number} avenue {given} {family}", "{number} boulevard {family}", "{number} rue de la Gare", "{number} rue du Moulin", "{number} place de l’Église", "{number} rue de la République", "{number} Grande Rue", "{number} rue des Écoles", "{number} chemin des Vignes"],
   "phone": "+33 N ## ## ## ##",
   "fictionalPhone": false
 }

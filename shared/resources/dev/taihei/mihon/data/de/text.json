@@ -216,7 +216,6 @@
     ["lassen",67],
     ["meinen",66],
     ["Kinder",65],
-    ["Toms",65],
     ["wollen",65],
     ["ob",65],
     ["ganz",64],
@@ -556,7 +555,6 @@
     ["Sache",35],
     ["möglich",35],
     ["Tod",35],
-    ["Marias",35],
     ["vier",35],
     ["Spaß",35],
     ["Jungen",35],
@@ -1167,6 +1165,7 @@
     ["trotzdem",23],
     ["Ruf",23],
     ["könne",22],
+    ["Kraft",22],
     ["entfernt",22],
     ["Bäume",22],
     ["Regeln",22],
@@ -1339,6 +1338,7 @@
     ["warf",21],
     ["spiele",21],
     ["Fernseher",21],
-    ["irgendwie",21]
+    ["irgendwie",21],
+    ["schreibe",20]
   ]
 }

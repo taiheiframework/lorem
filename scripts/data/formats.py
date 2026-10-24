@@ -34,7 +34,7 @@ COUNTRIES = {
         streets=["{number} rue {given} {family}", "{number} avenue {given} {family}",
                  "{number} boulevard {family}", "{number} rue de la Gare", "{number} rue du Moulin",
                  "{number} place de l’Église", "{number} rue de la République",
-                 "{number} grande rue", "{number} rue des Écoles", "{number} chemin des Vignes"]),
+                 "{number} Grande Rue", "{number} rue des Écoles", "{number} chemin des Vignes"]),
     "DE": dict(
         lines=["{street}", "{postalCode} {city}", "{country}"], separator=", ",
         postalCode="#####", phone="+49 17# #######", fictionalPhone=False,
@@ -76,7 +76,7 @@ COUNTRIES = {
                  "İstiklal Caddesi No: {number}", "Okul Sokak No: {small}", "Çarşı Sokak No: {small}"]),
     "VN": dict(
         lines=["{street}", "{city}", "{postalCode}", "{country}"], separator=", ",
-        postalCode="N#####", phone="+84 9# ### ## ##", fictionalPhone=False,
+        postalCode="N####", phone="+84 9# ### ## ##", fictionalPhone=False,
         streets=["Số {number} đường {family} {given}", "Số {number} phố {family} {given}",
                  "Số {number} đường Lê Lợi", "Số {number} đường Trần Hưng Đạo",
                  "Số {number} đường Hai Bà Trưng", "Số {number} đường Nguyễn Huệ"]),

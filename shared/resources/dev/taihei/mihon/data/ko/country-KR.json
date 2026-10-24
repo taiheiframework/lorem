@@ -33,7 +33,6 @@
     {"name":"구미시","weight":421},
     {"name":"광주시","weight":397},
     {"name":"세종특별자치시","weight":391},
-    {"name":"동대문구","weight":364},
     {"name":"김포시","weight":352},
     {"name":"진주시","weight":341},
     {"name":"원주시","weight":330},
@@ -104,7 +103,8 @@
     {"name":"무안읍","weight":10},
     {"name":"평창읍","weight":9},
     {"name":"후포면","weight":8},
-    {"name":"토성면","weight":8}
+    {"name":"토성면","weight":8},
+    {"name":"가산면","weight":8}
   ],
   "streets": ["세종대로 {number}", "테헤란로 {number}", "을지로 {number}", "종로 {number}", "강남대로 {number}", "한강대로 {number}", "중앙로 {number}", "시청로 {number}"],
   "phone": "+82 10-####-####",

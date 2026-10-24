@@ -37,12 +37,19 @@ CAST_NATIVE = {
     "ko": {"톰", "톰은", "톰이", "톰을", "톰의", "톰에게", "메리", "메리는", "메리가", "존", "잭"},
     "th": {"ทอม", "แมรี่", "แมรี", "จอห์น", "แจ็ค", "ไมค์"},
     "ar": {"توم", "ماري", "جون", "جاك", "سامي", "ليلى", "فاضل", "زيري", "ريما", "ياني", "يني", "ريمة", "مناد", "بايا", "سكورا", "دانيا"},
-    "he": {"טום", "תום", "מרי", "ג'ון", "ג׳ון", "ג'ק", "סמי", "לילה"},
+    "he": {"טום", "תום", "מרי", "מריה", "במרי", "בטום", "ג'ון", "ג׳ון", "ג'ק", "סמי", "לילה"},
     "hi": {"टॉम", "मैरी", "जॉन", "जैक", "सामी", "लैला"},
 }
 
 # Words that reflect what some of Tatoeba's sentences argue about rather than the language.
-TOPICAL = {"ar": {"الإنفصاليون", "الانفصاليون", "الإنفصاليين", "الانفصاليين"}}
+TOPICAL = {"ar": {"الإنفصاليون", "الانفصاليون", "الإنفصاليين", "الانفصاليين"},
+           "it": {"costruire", "nazionalità"}, "bg": {"френски"}}
+
+# Hebrew and Arabic write a one-letter word (and, the, to, from, that) onto the next one, so a
+# name of the cast also stands behind such a prefix (לתום, لتوم); German adds an s for the
+# genitive (Toms). Not the Hebrew ב (in): בתום is "at the end of".
+PREFIXES = {"he": "והכלמש", "ar": "وبلفك"}
+GENITIVE = {"de": "s"}
 
 # Japanese segments split inflections into pieces of a kana or two; a word that starts with a
 # small kana, ん or ー is such a piece, and a single hiragana is one unless it is a particle.
@@ -174,6 +181,9 @@ def words(tag, conf, names, script_filter=None, limit=1300):
         return "".join(c for c in word if not unicodedata.combining(c)) if script == "Arab" else word
 
     excluded = excluded | {bare(n) for n in excluded}
+    cast = CAST | CAST_NATIVE.get(tag, set())
+    excluded |= {p + n for n in cast for p in PREFIXES.get(tag, "")}
+    excluded |= {n + GENITIVE[tag] for n in cast | set(names)} if tag in GENITIVE else set()
     lowered_names = {lower(n, tag) for n in excluded} if cased else excluded
     ranked = []
     for key, count in total.most_common():

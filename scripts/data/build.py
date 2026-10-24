@@ -45,9 +45,39 @@ CITY_PREFIXES = {
     "es": ["Ciudad de ", "ciudad de "],
     "sr-Cyrl": ["Град "],
 }
-NOT_CITIES = {"th": ["เขต", "จังหวัด", "อำเภอ", "แขวง"], "sr-Cyrl": ["Општина "], "es": ["Barrio "]}
-NOT_CITY_ENDINGS = {"ja": ["圏", "地域", "東京都"], "zh-Hant": ["區"], "fr": [" Métropole"]}
-NOT_CITY_WORDS = ["Métropole", "Metropolitana", "Konurbacja", "Innenstadt", "Великий ", "Région", "Província"]
+# Wikidata tells some Greek municipalities apart by their region: Περιστέρι Αττικής is Peristeri.
+CITY_SUFFIXES = {"el": [" Αττικής"]}
+NOT_CITIES = {"th": ["เขต", "จังหวัด", "อำเภอ", "แขวง"], "sr-Cyrl": ["Општина "], "es": ["Barrio ", "Distrito "],
+              "vi": ["Quận ", "Tỉnh ", "Huyện "]}
+NOT_CITY_ENDINGS = {"ja": ["圏", "地域", "東京都"], "zh-Hant": ["區"], "fr": [" Métropole"], "ko": ["구"]}
+NOT_CITY_WORDS = ["métropole", "metropolitana", "metropolitano", "konurbacja", "innenstadt", "великий ", "région",
+                  "província", "provincia"]
+# Districts of a city and provinces that Wikidata classes as settlements, by name (written for
+# this library from the merge gate's reading), and one item Wikidata places in the wrong country.
+NOT_CITY_NAMES = {
+    "es": {"Chamartín"},
+    "el": {"Πίσα"},
+    "vi": {"Kiên Giang", "Ninh Thuận", "Nam Từ Liêm", "Cẩm Lệ", "Bắc Từ Liêm", "Hoàng Mai", "Long Biên"},
+    "tr": {"Şahinbey", "Çankaya", "Keçiören", "Osmangazi", "Seyhan", "Selçuklu", "Mamak", "Etimesgut",
+           "Sincan", "Yenimahalle", "Esenyurt", "Pendik", "Bağcılar", "Küçükçekmece", "Ümraniye",
+           "Şehitkamil", "Yüreğir", "Karşıyaka", "Bornova", "Buca", "Nilüfer", "Yıldırım", "Kepez",
+           "Muratpaşa", "Meram", "Karatay", "Altındağ", "Pursaklar", "Bahçelievler", "Sultangazi",
+           "Şehitkâmil", "Melikgazi", "Karabağlar", "Kadıköy", "Eyüpsultan", "Onikişubat", "Kocasinan",
+           "Talas", "Tepebaşı", "Odunpazarı", "Atakum", "İlkadım", "Canik", "Akdeniz", "Toroslar",
+           "Mezitli", "Yenişehir", "Pamukkale", "Merkezefendi", "Battalgazi", "Yeşilyurt",
+           "Dulkadiroğlu", "Konak", "Bayraklı", "Çiğli", "Kartal", "Maltepe", "Üsküdar", "Fatih",
+           "Beşiktaş", "Şişli", "Bakırköy", "Esenler", "Gaziosmanpaşa", "Sarıyer", "Avcılar",
+           "Başakşehir", "Beylikdüzü", "Sultanbeyli", "Ataşehir", "Tuzla", "Kâğıthane", "Zeytinburnu",
+           "Bayrampaşa", "Beyoğlu", "Arnavutköy", "Çekmeköy", "Sancaktepe", "Büyükçekmece",
+           "Gebze", "İzmit", "Adapazarı", "Serdivan", "Efeler", "Menteşe", "Bodrum", "Bağlar",
+           "Eyyübiye", "Haliliye", "Çukurova", "Kayapınar", "Ortahisar", "İpekyolu", "Sur",
+           "Yenişehir", "Artuklu", "Kızıltepe", "Yakutiye", "Palandöken", "Aziziye", "Merkez",
+           "Beykoz", "Yunusemre", "Süleymanpaşa", "Altınordu", "Karaköprü", "Konyaaltı"},
+    "hu": {"Rákospalota", "Pestszenterzsébet", "Újpest", "Kispest", "Budafok", "Csepel", "Pesterzsébet",
+           "Rákoskeresztúr", "Óbuda", "Zugló"},
+    "sr-Cyrl": {"Земун", "Обреновац", "Нови Београд", "Палилула", "Чукарица", "Раковица", "Звездара",
+                "Вождовац", "Младеновац", "Лазаревац"},
+}
 
 
 def city_names(tag, cities):
@@ -58,11 +88,19 @@ def city_names(tag, cities):
             continue
         if any(name.endswith(e) for e in NOT_CITY_ENDINGS.get(tag, [])):
             continue
-        if any(w in name for w in NOT_CITY_WORDS) or (name[:1].isalpha() and name[:1].islower()):
+        if any(w in name.lower() for w in NOT_CITY_WORDS) or (name[:1].isalpha() and name[:1].islower()):
+            continue
+        if name in NOT_CITY_NAMES.get(tag, set()):
+            continue
+        # One city under two names (Palma, Palma de Mallorca): the first, the more populous, stays.
+        if any(name.startswith(s + " ") or s.startswith(name + " ") for s in seen):
             continue
         for p in CITY_PREFIXES.get(tag, []):
             if name.startswith(p) and len(name) > len(p):
                 name = name[len(p):]
+        for s in CITY_SUFFIXES.get(tag, []):
+            if name.endswith(s) and len(name) > len(s):
+                name = name[: -len(s)]
         if name not in seen:
             seen.add(name)
             out.append(dict(c, name=name))
