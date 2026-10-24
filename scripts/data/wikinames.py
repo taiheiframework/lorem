@@ -106,16 +106,18 @@ STRICT_WRITING = {"ru", "uk", "bg", "el", "th", "he"}
 ENGLISH_NAMES = {"John", "Mary", "Paul", "Michael", "Peter", "David", "James", "George", "Thomas",
                  "William", "Robert", "Richard", "Joseph", "Charles", "Elizabeth", "Anne", "Margaret",
                  "Jennifer", "Daniel", "Mark", "Hans", "Francisco", "Oliver", "Edward", "Leonard",
-                 "Arthur", "Martin", "Pavel", "Taylor", "Barry", "Carlos", "Tito"}
+                 "Arthur", "Martin", "Pavel", "Taylor", "Barry", "Carlos", "Tito", "Leander", "Jose", "José"}
 FOREIGN_NAMES_LEFT_OUT = {"hi"}
 
 # Names that Wikidata records as given names but that are none: the Vietnamese middle names Thị
 # and Văn, a nickname ("macaroni"), Hindi labels that translate an English label instead of
 # naming (समानता "equality" for Samantha, हवा "air" for Pawan), and Hindi labels that hold more
-# than a name (an honorific, a family name, an epithet, "the Telugu language"). By list: Maria or
+# than a name (an honorific, a family name, an epithet, "the Telugu language"), and Kaur, which
+# stands after a Sikh woman's given name rather than for it. By list: Maria or
 # Marie as a man's name is the second half of Jean-Marie or Jan Maria, and ललिता is a woman's name.
 NOT_GIVEN = {"vi": {"Thị", "Văn"}, "ar": {"مكرونه", "مكرونة"},
-             "hi": {"समानता", "संतुष्टि", "हवा", "मोहिनी अवतार", "श्री गायत्री देवी", "सुयश दास", "तेलुगु भाषा"}}
+             "hi": {"समानता", "संतुष्टि", "हवा", "मोहिनी अवतार", "श्री गायत्री देवी", "सुयश दास", "तेलुगु भाषा",
+                    "कौर"}}
 NOT_GIVEN_BY_GENDER = {(t, "male"): {"Maria", "Marie", "María"} for t in ("fr", "nl", "it", "pl", "de", "es", "pt")}
 NOT_GIVEN_BY_GENDER[("hi", "male")] = {"ललिता"}
 

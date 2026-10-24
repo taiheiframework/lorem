@@ -117,11 +117,11 @@
     {"name":"शारदा","latin":"Sharada","weight":2},
     {"name":"डिम्पल","latin":"Dimple","weight":2},
     {"name":"नवनीत","latin":"Navneet","weight":2},
-    {"name":"कौर","latin":"Kaur","weight":2},
     {"name":"शिवांगी","latin":"Shivangi","weight":2},
     {"name":"सुष्मिता","latin":"Sushmita","weight":2},
     {"name":"रितु","latin":"Ritu","weight":1},
-    {"name":"अमीषा","latin":"Amisha","weight":1}
+    {"name":"अमीषा","latin":"Amisha","weight":1},
+    {"name":"निरूपा","latin":"Nirupa","weight":1}
   ],
   "male": [
     {"name":"अनिल","latin":"Anil","weight":121},
@@ -199,7 +199,6 @@
     {"name":"सतपाल","latin":"Satpal","weight":5},
     {"name":"हरिंदर","latin":"Harinder","weight":4},
     {"name":"रणवीर","latin":"Ranvir","weight":4},
-    {"name":"ख़ोसे","latin":"Jose","weight":4},
     {"name":"नारायणस्वामी","latin":"Narayanaswamy","weight":4},
     {"name":"पुरुषोत्तम","latin":"Purushottam","weight":6},
     {"name":"मधुर","latin":"Madhur","weight":2},
@@ -237,8 +236,7 @@
     {"name":"सुन्दर","latin":"Sundar","weight":2},
     {"name":"अंगद","latin":"Angad","weight":2},
     {"name":"स्वप्निल","latin":"Swapnil","weight":2},
-    {"name":"विराट","latin":"Virat","weight":1},
-    {"name":"लिएंडर","latin":"Leander","weight":1}
+    {"name":"विराट","latin":"Virat","weight":1}
   ],
   "family": [
     {"name":"सिंह","latin":"Singh","weight":1197},

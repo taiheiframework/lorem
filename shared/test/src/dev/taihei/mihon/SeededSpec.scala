@@ -177,11 +177,11 @@ object SeededSpec extends ZIOSpecDefault:
     ),
     "hi" -> List(
       "लगा जाना जापान लोग कोशिश है खरीदी मॅरी वह आगे है राज़?",
-      "पूजा शर्मा",
-      "Pooja Sharma",
+      "चंद्रिका शर्मा",
+      "Chandrika Sharma",
       "-",
-      "mukesh.banerjee@lunarbytefusion.example",
-      "66, बीना नगर, मुम्बई 372334, महाराष्ट्र, भारत",
+      "abhishek.banerjee@lunarbytefusion.example",
+      "66, ऐश्वर्या नगर, मुम्बई 372334, महाराष्ट्र, भारत",
       "+91 95475 73308",
       "बीमार उन्हें",
       "किसने",
@@ -476,10 +476,10 @@ object SeededSpec extends ZIOSpecDefault:
       )*
     ),
     test("the same seed and language give the same values") {
-      assertTrue(run(Mihon.seeded(7L, Language("ja"))) == run(Mihon.seeded(7L, Language("ja"))))
+      assertTrue(run(Mihon.seeded(7L, Language("ja"), clock)) == run(Mihon.seeded(7L, Language("ja"), clock)))
     },
     test("another seed gives other values") {
-      assertTrue(run(Mihon.seeded(7L)) != run(Mihon.seeded(8L)))
+      assertTrue(run(Mihon.seeded(7L, clock = clock)) != run(Mihon.seeded(8L, clock = clock)))
     },
     test("secure generators do not repeat each other") {
       assertTrue(run(Mihon.secure()) != run(Mihon.secure()))
@@ -497,8 +497,8 @@ object SeededSpec extends ZIOSpecDefault:
       )
     },
     test("a seeded run does not depend on which language the generator started in") {
-      val a = Mihon.seeded(9L).withLanguage(Language("la"))
-      val b = Mihon.seeded(9L, Language("la"))
+      val a = Mihon.seeded(9L, clock = clock).withLanguage(Language("la"))
+      val b = Mihon.seeded(9L, Language("la"), clock)
       assertTrue(run(a) == run(b))
     },
   )

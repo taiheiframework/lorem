@@ -96,7 +96,7 @@ the reservation is cited here; elsewhere a number may be real.
   they are the second half of Jean-Marie or Jan Maria), the Arabic latin forms Zainab and
   Suleiman where the English label has Zeynep and Solomon, Hindi labels that translate an English
   name instead of naming (समानता, "equality", for Samantha) or hold more than a name, the latin
-  form Mohit, and European names written in Devanagari. Arabic names use the Arabic ي where a
+  form Mohit, and the most frequent European names written in Devanagari. Arabic names use the Arabic ي where a
   label has the Persian ی.
 - **Romanisation.** The `latin` form is computed by rule where one exists: ICAO 9303 for Russian
   (with the national variants for Ukrainian, Bulgarian and Serbian), ELOT 743 for Greek, Hepburn
@@ -114,8 +114,9 @@ the reservation is cited here; elsewhere a number may be real.
   prefixes are removed, as are "Kreisfreie Stadt", "Ciudad de" and "Град"; Thai districts and
   provinces, Japanese metropolitan areas and regions, Taiwanese districts, Serbian municipalities,
   French and Brazilian metropolitan areas and Polish conurbations are left out, and so are the
-  districts of Madrid, Hanoi, Ankara, Istanbul, Budapest, Belgrade and Seoul and two Vietnamese
-  provinces that Wikidata classes as settlements, by a list in `scripts/data/build.py`; of one
+  districts of Madrid, Barcelona, Hanoi, Ankara, Istanbul, Budapest, Belgrade and Seoul, two
+  Vietnamese provinces that Wikidata classes as settlements, and Spanish places that are part of
+  another city (an old town, a part of Benalmádena), by a list in `scripts/data/build.py`; of one
   city under two names (Palma, Palma de Mallorca) the more populous stays; a Vietnamese city
   that a 2025 reform dissolved as an administrative unit still counts, and a place Wikidata also
   gives Kosovo is left out of Serbia), named in the language (a Serbian Latin label in Cyrillic,

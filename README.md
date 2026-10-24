@@ -164,7 +164,7 @@ Mihon.seeded(1L, Language("ru")).person      // Людмила Фомина, lat
 Mihon.seeded(1L, Language("el")).person      // Βασιλική Κοκολάκη, latin "Vasiliki Kokolaki"
 Mihon.seeded(1L, Language("ar")).person      // ناديا إبراهيم, latin "Nadiyah Ibrahim"
 Mihon.seeded(1L, Language("he")).person      // מירב לנקרי, latin "Meirav Lankri"
-Mihon.seeded(1L, Language("hi")).person      // कल्पना चटर्जी, latin "Kalpana Chatterjee"
+Mihon.seeded(1L, Language("hi")).person      // विद्या चटर्जी, latin "Vidya Chatterjee"
 Mihon.seeded(1L, Language("zh-Hans")).person // 彭薇, latin "Peng Wei"
 Mihon.seeded(1L, Language("ko")).person      // 장소희, latin "Jang So-hui"
 Mihon.seeded(1L, Language("ru")).sentence    // "Люди провёл хотели отец нужна пить знакомы себя со игры."
