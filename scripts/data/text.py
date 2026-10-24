@@ -37,7 +37,7 @@ CAST_NATIVE = {
     "ko": {"톰", "톰은", "톰이", "톰을", "톰의", "톰에게", "메리", "메리는", "메리가", "존", "잭"},
     "th": {"ทอม", "แมรี่", "แมรี", "จอห์น", "แจ็ค", "ไมค์"},
     "ar": {"توم", "ماري", "جون", "جاك", "سامي", "ليلى", "فاضل", "زيري", "ريما", "ياني", "يني", "ريمة", "مناد", "بايا", "سكورا", "دانيا"},
-    "he": {"טום", "מרי", "ג'ון", "ג׳ון", "ג'ק", "סמי", "לילה"},
+    "he": {"טום", "תום", "מרי", "ג'ון", "ג׳ון", "ג'ק", "סמי", "לילה"},
     "hi": {"टॉम", "मैरी", "जॉन", "जैक", "सामी", "लैला"},
 }
 
@@ -168,10 +168,16 @@ def words(tag, conf, names, script_filter=None, limit=1300):
                 if t == key:
                     non_initial_lower[key] += 1
 
+    def bare(word):
+        # Arabic vowel marks (harakat, shadda) do not make another word: الإنفصاليّون is
+        # الإنفصاليون.
+        return "".join(c for c in word if not unicodedata.combining(c)) if script == "Arab" else word
+
+    excluded = excluded | {bare(n) for n in excluded}
     lowered_names = {lower(n, tag) for n in excluded} if cased else excluded
     ranked = []
     for key, count in total.most_common():
-        if key in lowered_names or key in bad or lower(key, tag) in bad:
+        if key in lowered_names or bare(key) in lowered_names or key in bad or lower(key, tag) in bad:
             continue
         if tag == "ja" and _ja_piece(key):
             continue

@@ -37,7 +37,7 @@ import dev.taihei.tsuji.Language
  *
  * val ja = en.withLanguage(Language("ja"))
  * ja.sentence // Japanese text, without spaces, ending in 。, ？ or ！
- * ja.person.fullName // family name first, without a space, such as "三浦さくら"
+ * ja.person.fullName // family name first, without a space, such as "三浦めぐみ"
  *
  * Mihon.seeded(1L, Language("la")).sentence // Lorem Ipsum
  * }}}

@@ -153,3 +153,35 @@ def hangul(text):
             out.append(ch)
     s = "".join(out)
     return s[:1].upper() + s[1:]
+
+
+# Serbian writes the same alphabet in Latin and Cyrillic, letter for letter (Gaj's Latin and
+# Vuk's Cyrillic), so a Latin label is turned into Cyrillic without loss.
+SERBIAN_DIGRAPHS = {"lj": "љ", "nj": "њ", "dž": "џ"}
+SERBIAN_LETTERS = {
+    "a": "а", "b": "б", "c": "ц", "č": "ч", "ć": "ћ", "d": "д", "đ": "ђ", "e": "е", "f": "ф", "g": "г",
+    "h": "х", "i": "и", "j": "ј", "k": "к", "l": "л", "m": "м", "n": "н", "o": "о", "p": "п", "r": "р",
+    "s": "с", "š": "ш", "t": "т", "u": "у", "v": "в", "z": "з", "ž": "ж",
+}
+
+
+def serbian_cyrillic(text):
+    """The Cyrillic of a Serbian Latin text, or None when it holds a letter Serbian Latin lacks."""
+    out, i = [], 0
+    while i < len(text):
+        two = text[i:i + 2]
+        if two.lower() in SERBIAN_DIGRAPHS:
+            c = SERBIAN_DIGRAPHS[two.lower()]
+            out.append(c.upper() if two[0].isupper() else c)
+            i += 2
+            continue
+        ch = text[i]
+        if ch.lower() in SERBIAN_LETTERS:
+            c = SERBIAN_LETTERS[ch.lower()]
+            out.append(c.upper() if ch.isupper() else c)
+        elif ch in " -'":
+            out.append(ch)
+        else:
+            return None
+        i += 1
+    return "".join(out)

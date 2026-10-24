@@ -50,6 +50,8 @@ refuses "a city in no listed region" "not one of regions" edit en/country-US.jso
 refuses "city weights beyond Int.MaxValue" "add up beyond" edit en/country-US.json "d['cities'][0]['weight'] = 2147483647; d['cities'][1]['weight'] = 2147483647"
 refuses "a phone pattern without a calling code" "phone: not" edit en/country-US.json "d['phone'] = '555-0100'"
 refuses "an alias of no language" "the target is not a language" edit languages.json "d['aliases'] = [['xx', 'y']]"
+refuses "an alias equal to a language's tag" "a language's own tag" edit languages.json "d['aliases'].append(['en', 'la'])"
+refuses "an alias listed twice" "an alias listed twice" edit languages.json "d['aliases'].append(d['aliases'][0])"
 refuses "unsorted countries" "not sorted" edit en/countries.json "d.reverse()"
 refuses "a language over its budget" "more than the budget" edit en/text.json "d['words'] = [['w%d' % i + 'x' * 40, 1] for i in range(2000)]"
 

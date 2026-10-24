@@ -8,7 +8,6 @@
     {"name":"かおり","reading":"カオリ","latin":"Kaori","weight":332},
     {"name":"のりこ","reading":"ノリコ","latin":"Noriko","weight":299},
     {"name":"ともこ","reading":"トモコ","latin":"Tomoko","weight":296},
-    {"name":"けい","reading":"ケイ","latin":"Kei","weight":79},
     {"name":"ひろみ","reading":"ヒロミ","latin":"Hiromi","weight":201},
     {"name":"ひろこ","reading":"ヒロコ","latin":"Hiroko","weight":275},
     {"name":"みき","reading":"ミキ","latin":"Miki","weight":253},
@@ -21,7 +20,6 @@
     {"name":"まりこ","reading":"マリコ","latin":"Mariko","weight":211},
     {"name":"あい","reading":"アイ","latin":"Ai","weight":209},
     {"name":"りえ","reading":"リエ","latin":"Rie","weight":208},
-    {"name":"まさみ","reading":"マサミ","latin":"Masami","weight":63},
     {"name":"なおこ","reading":"ナオコ","latin":"Naoko","weight":202},
     {"name":"ようこ","reading":"ヨウコ","latin":"Yoko","weight":201},
     {"name":"ゆきこ","reading":"ユキコ","latin":"Yukiko","weight":200},
@@ -86,7 +84,6 @@
     {"name":"えりこ","reading":"エリコ","latin":"Eriko","weight":102},
     {"name":"なな","reading":"ナナ","latin":"Nana","weight":97},
     {"name":"えり","reading":"エリ","latin":"Eri","weight":95},
-    {"name":"よしみ","reading":"ヨシミ","latin":"Yoshimi","weight":25},
     {"name":"あおい","reading":"アオイ","latin":"Aoi","weight":94},
     {"name":"としこ","reading":"トシコ","latin":"Toshiko","weight":93},
     {"name":"かずこ","reading":"カズコ","latin":"Kazuko","weight":93},
@@ -121,7 +118,10 @@
     {"name":"美智子","reading":"ミチコ","latin":"Michiko","weight":74},
     {"name":"かれん","reading":"カレン","latin":"Karen","weight":74},
     {"name":"まゆ","reading":"マユ","latin":"Mayu","weight":74},
-    {"name":"くみ","reading":"クミ","latin":"Kumi","weight":74}
+    {"name":"くみ","reading":"クミ","latin":"Kumi","weight":74},
+    {"name":"まりあ","reading":"マリア","latin":"Maria","weight":73},
+    {"name":"かよこ","reading":"カヨコ","latin":"Kayoko","weight":73},
+    {"name":"直美","reading":"ナオミ","latin":"Naomi","weight":72}
   ],
   "male": [
     {"name":"たかし","reading":"タカシ","latin":"Takashi","weight":979},
@@ -163,7 +163,6 @@
     {"name":"けい","reading":"ケイ","latin":"Kei","weight":201},
     {"name":"たかお","reading":"タカオ","latin":"Takao","weight":279},
     {"name":"しげる","reading":"シゲル","latin":"Shigeru","weight":277},
-    {"name":"ひろみ","reading":"ヒロミ","latin":"Hiromi","weight":74},
     {"name":"きよし","reading":"キヨシ","latin":"Kiyoshi","weight":273},
     {"name":"たくや","reading":"タクヤ","latin":"Takuya","weight":272},
     {"name":"ひろあき","reading":"ヒロアキ","latin":"Hiroaki","weight":271},
@@ -243,7 +242,8 @@
     {"name":"いさお","reading":"イサオ","latin":"Isao","weight":155},
     {"name":"翔太","reading":"ショウタ","latin":"Shota","weight":154},
     {"name":"まさとし","reading":"マサトシ","latin":"Masatoshi","weight":154},
-    {"name":"しょういち","reading":"ショウイチ","latin":"Shoichi","weight":152}
+    {"name":"しょういち","reading":"ショウイチ","latin":"Shoichi","weight":152},
+    {"name":"こうぞう","reading":"コウゾウ","latin":"Kozo","weight":151}
   ],
   "family": [
     {"name":"田中","reading":"タナカ","latin":"Tanaka","weight":1978},

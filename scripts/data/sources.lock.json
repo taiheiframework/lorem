@@ -35,10 +35,22 @@
     "bytes": 12282,
     "retrieved": "2026-10-24"
   },
+  "cldr-47.0.0/cldr-localenames-full/main/bg/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/bg/territories.json",
+    "sha256": "7a8b99d630664ec56a4a2f49ee4b11e2ad251d33b5d46034c0ca6cf8f4c87453",
+    "bytes": 12817,
+    "retrieved": "2026-10-24"
+  },
   "cldr-47.0.0/cldr-localenames-full/main/de/territories.json": {
     "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/de/territories.json",
     "sha256": "7a588516781c3d235e7e0d4557f20c65e8c81bd1887f301283c616e1e26734ac",
     "bytes": 9868,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/el/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/el/territories.json",
+    "sha256": "9d5bb576a08da70cecbec83ea78d70931d64c81e6c492546621aed79a7adfe45",
+    "bytes": 13108,
     "retrieved": "2026-10-24"
   },
   "cldr-47.0.0/cldr-localenames-full/main/en/territories.json": {
@@ -47,10 +59,40 @@
     "bytes": 9956,
     "retrieved": "2026-10-24"
   },
+  "cldr-47.0.0/cldr-localenames-full/main/es/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/es/territories.json",
+    "sha256": "3fc689e846a0d691972bcd8b94116423da420a1587a9984eefec8f626a44c26f",
+    "bytes": 9868,
+    "retrieved": "2026-10-24"
+  },
   "cldr-47.0.0/cldr-localenames-full/main/fr/territories.json": {
     "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/fr/territories.json",
     "sha256": "1d3958a3bc424d7793956edb9cd4cc0ab59555b058798494e85e4be17ade454a",
     "bytes": 10130,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/he/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/he/territories.json",
+    "sha256": "90b157fa7f2846f032fd2c975c3ed90cf3bb68770a83e9d0727bc4c4207f4ac0",
+    "bytes": 11928,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/hi/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/hi/territories.json",
+    "sha256": "8b1418383f309bca5a47f3f61e208717253309db37e17e543b3e563459efc1d7",
+    "bytes": 15945,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/hu/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/hu/territories.json",
+    "sha256": "2315359c90f44c5de51d5466bf70b4b4914924cb4bdbef80d8650f9da071184c",
+    "bytes": 10121,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/it/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/it/territories.json",
+    "sha256": "aa8d5a077c25f2fab1c6fbb21c14db8686d18a3480cd203c3dc56ed7c315d652",
+    "bytes": 9849,
     "retrieved": "2026-10-24"
   },
   "cldr-47.0.0/cldr-localenames-full/main/ja/territories.json": {
@@ -59,10 +101,28 @@
     "bytes": 11751,
     "retrieved": "2026-10-24"
   },
+  "cldr-47.0.0/cldr-localenames-full/main/ko/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/ko/territories.json",
+    "sha256": "052055b3fa8022983ce123d63c30153f1edffba78b9ee24d5fb0f83455a46439",
+    "bytes": 10611,
+    "retrieved": "2026-10-24"
+  },
   "cldr-47.0.0/cldr-localenames-full/main/nl/territories.json": {
     "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/nl/territories.json",
     "sha256": "51f5d8ffc56cee8b610b2857eb491d151ad2866da49eccbd7b9ff0d6461f9b3c",
     "bytes": 9943,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/pl/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/pl/territories.json",
+    "sha256": "8a845b068d2545cddfd5b50fa1e982cd1d64a6ae41aabd6b48b704cf784089bb",
+    "bytes": 9931,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/pt/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/pt/territories.json",
+    "sha256": "00ed17b43b0e82c3fa8e241fff0a0e961d7d625160f635a6bf7d58a7e52ca549",
+    "bytes": 9984,
     "retrieved": "2026-10-24"
   },
   "cldr-47.0.0/cldr-localenames-full/main/ru/territories.json": {
@@ -71,10 +131,40 @@
     "bytes": 12730,
     "retrieved": "2026-10-24"
   },
+  "cldr-47.0.0/cldr-localenames-full/main/sr/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/sr/territories.json",
+    "sha256": "ee4d8bb45d86f4aad482bc842aebfc833081a1c87a5e3bb5e196d0c05780806a",
+    "bytes": 12910,
+    "retrieved": "2026-10-24"
+  },
   "cldr-47.0.0/cldr-localenames-full/main/th/territories.json": {
     "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/th/territories.json",
     "sha256": "640db35182b55b57efe5b53446f266bb1d7ff5b06571221cb263d0fb550de8cc",
     "bytes": 16270,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/tr/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/tr/territories.json",
+    "sha256": "0f3d474d0d1b94d956b4a2d6dd749358317383ef462e39c1ee0c084f47909d0d",
+    "bytes": 9853,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/uk/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/uk/territories.json",
+    "sha256": "0ced254cb21895aef0050ee36d0b7797bbe944c8c46d401174cf68ff3de4a9fa",
+    "bytes": 13224,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/vi/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/vi/territories.json",
+    "sha256": "26444cc1ce7ea0d8a088a5017172ff17b8e0d241b8701cf228d142a1c1a3c8d0",
+    "bytes": 10062,
+    "retrieved": "2026-10-24"
+  },
+  "cldr-47.0.0/cldr-localenames-full/main/zh-Hant/territories.json": {
+    "url": "https://cdn.jsdelivr.net/npm/cldr-localenames-full@47.0.0/main/zh-Hant/territories.json",
+    "sha256": "9623d11205c24fa5053e060ed6b86020bed9c79b8a62ea2ac0df1467294f2fdc",
+    "bytes": 9846,
     "retrieved": "2026-10-24"
   },
   "cldr-47.0.0/cldr-localenames-full/main/zh/territories.json": {
@@ -251,10 +341,34 @@
     "bytes": 3777,
     "retrieved": "2026-10-24"
   },
+  "ldnoobw-5faf2ba42d7b/es": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/es",
+    "sha256": "073334261cc2e7c08339faefd2f19f9623e8240a0ac18fe2a26c368b897496ce",
+    "bytes": 617,
+    "retrieved": "2026-10-24"
+  },
   "ldnoobw-5faf2ba42d7b/fr": {
     "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/fr",
     "sha256": "79763a705e08256b393952852bb63aa903f4485e0ef02f70735f5e50efff213c",
     "bytes": 793,
+    "retrieved": "2026-10-24"
+  },
+  "ldnoobw-5faf2ba42d7b/hi": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/hi",
+    "sha256": "83636e9b7a5260451e09e9e471f81dad9f082d107a82da77047e57d7856ed0cc",
+    "bytes": 1123,
+    "retrieved": "2026-10-24"
+  },
+  "ldnoobw-5faf2ba42d7b/hu": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/hu",
+    "sha256": "a6943a971496f16e9a9d59ba6fde146d229699600e9636828d8d34ed9160aff5",
+    "bytes": 780,
+    "retrieved": "2026-10-24"
+  },
+  "ldnoobw-5faf2ba42d7b/it": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/it",
+    "sha256": "d413f41018d58aa79d2c4809d0161f29ffd5652c4dc34c5b7b9ade680ee5599a",
+    "bytes": 1451,
     "retrieved": "2026-10-24"
   },
   "ldnoobw-5faf2ba42d7b/ja": {
@@ -263,10 +377,28 @@
     "bytes": 2339,
     "retrieved": "2026-10-24"
   },
+  "ldnoobw-5faf2ba42d7b/ko": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/ko",
+    "sha256": "0dd4b74ffea6e3bb35d658e6d8262b53ee99281eaa48ecb515a2065bfcc7f69d",
+    "bytes": 588,
+    "retrieved": "2026-10-24"
+  },
   "ldnoobw-5faf2ba42d7b/nl": {
     "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/nl",
     "sha256": "8298ba0cdc3ca9a1989c349b8ad0148e4504c2804f2f2fb6c2f52bfb39c5ae71",
     "bytes": 1909,
+    "retrieved": "2026-10-24"
+  },
+  "ldnoobw-5faf2ba42d7b/pl": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/pl",
+    "sha256": "98cf824e3692255645c5a72d5913f26fd4f20930f725683b4c96bb312ca5d9b3",
+    "bytes": 483,
+    "retrieved": "2026-10-24"
+  },
+  "ldnoobw-5faf2ba42d7b/pt": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/pt",
+    "sha256": "05ef524b0bb7f83f87257f6ec4dabf70e16b8bb6930f769fb93deaf608ff196d",
+    "bytes": 629,
     "retrieved": "2026-10-24"
   },
   "ldnoobw-5faf2ba42d7b/ru": {
@@ -281,6 +413,12 @@
     "bytes": 493,
     "retrieved": "2026-10-24"
   },
+  "ldnoobw-5faf2ba42d7b/tr": {
+    "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/tr",
+    "sha256": "6c7ae03baee0f3fdc22eed169030567669005dad9a1923e0b571c4bd4f2f2ab5",
+    "bytes": 1509,
+    "retrieved": "2026-10-24"
+  },
   "ldnoobw-5faf2ba42d7b/zh": {
     "url": "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/5faf2ba42d7b1c0977169ec3611df25a3c08eb13/zh",
     "sha256": "a1d9aa037c8b039ef3b40148b3364ce2ca62ce4a955b7082a16ad99f6cbd1bc0",
@@ -291,6 +429,12 @@
     "url": "https://downloads.tatoeba.org/exports/per_language/ara/ara_sentences.tsv.bz2",
     "sha256": "c8d9c09f2db910ee1fb05054f0badb7a38195ea952b39f9e4ce5b92ec8ec70bc",
     "bytes": 769162,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/bul_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/bul/bul_sentences.tsv.bz2",
+    "sha256": "f9e608e6639084b28424a2cc50ab54c7e330f1ad21eab6c5fc44a0a59389c9ef",
+    "bytes": 299656,
     "retrieved": "2026-10-24"
   },
   "tatoeba/cmn_sentences.tsv.bz2": {
@@ -305,6 +449,12 @@
     "bytes": 12108183,
     "retrieved": "2026-10-24"
   },
+  "tatoeba/ell_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/ell/ell_sentences.tsv.bz2",
+    "sha256": "9f5e81ad034a68e81736b0caba621fae3391a40ab91f7087c7dbfbde68537ae4",
+    "bytes": 524073,
+    "retrieved": "2026-10-24"
+  },
   "tatoeba/eng_sentences.tsv.bz2": {
     "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences.tsv.bz2",
     "sha256": "f634eaaf26623c2a2e170be2dae54b18388479311ae8619d04889df4e5d021f3",
@@ -317,10 +467,40 @@
     "bytes": 9781712,
     "retrieved": "2026-10-24"
   },
+  "tatoeba/heb_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/heb/heb_sentences.tsv.bz2",
+    "sha256": "529ecc874447d5a47e3d4d69af6d96ac38c624b7da532962e228ba1ef5f379e3",
+    "bytes": 2401757,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/hin_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/hin/hin_sentences.tsv.bz2",
+    "sha256": "7e45c13ea3ccb15ed68bbc655f41b3be5f387bd42d2613efda179b32c540621c",
+    "bytes": 179395,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/hun_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/hun/hun_sentences.tsv.bz2",
+    "sha256": "47f12baca1054362df65d8cc96376099ffe0a174a5859889c5d0186adfd49269",
+    "bytes": 6000177,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/ita_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/ita/ita_sentences.tsv.bz2",
+    "sha256": "1cccd6614ee66899ebf6d22549a29a2b52531c68483e508c60decc7135a0c7cc",
+    "bytes": 9596820,
+    "retrieved": "2026-10-24"
+  },
   "tatoeba/jpn_sentences.tsv.bz2": {
     "url": "https://downloads.tatoeba.org/exports/per_language/jpn/jpn_sentences.tsv.bz2",
     "sha256": "25d727283d297f812b2c9ec36f3a6812a8a60ed9d6d5427978c4e020a83782c3",
     "bytes": 3417887,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/kor_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/kor/kor_sentences.tsv.bz2",
+    "sha256": "63bae2eec70e19d53d3bc46e9b7f2de3231cf0834265788983c0a222eb8f0186",
+    "bytes": 194349,
     "retrieved": "2026-10-24"
   },
   "tatoeba/nld_sentences.tsv.bz2": {
@@ -329,10 +509,34 @@
     "bytes": 2501052,
     "retrieved": "2026-10-24"
   },
+  "tatoeba/pol_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/pol/pol_sentences.tsv.bz2",
+    "sha256": "34a0d8105ced64ebc77dc82aec67f50434a6f484d725a5cb3ffd6755fa2b3751",
+    "bytes": 1737662,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/por_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/por/por_sentences.tsv.bz2",
+    "sha256": "ddb8dc071797c5e52d97e7b3f0d607290881ab2bfae4004a7c37007811f1c234",
+    "bytes": 6398543,
+    "retrieved": "2026-10-24"
+  },
   "tatoeba/rus_sentences.tsv.bz2": {
     "url": "https://downloads.tatoeba.org/exports/per_language/rus/rus_sentences.tsv.bz2",
     "sha256": "4cc471dbea673819ffada4735a9eadb4cd360074f9feee2fd6481bc5c7081760",
     "bytes": 15570556,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/spa_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/spa/spa_sentences.tsv.bz2",
+    "sha256": "29efd66854f11ad3480720ceda6e7b42563d40df4e660d9b0721c56a61753e9a",
+    "bytes": 6370284,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/srp_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/srp/srp_sentences.tsv.bz2",
+    "sha256": "0b5f4ea46bb1cbb9d2bf3ae87a22246c6bb8953607ca869b3960c01643af48f3",
+    "bytes": 628108,
     "retrieved": "2026-10-24"
   },
   "tatoeba/tha_sentences.tsv.bz2": {
@@ -341,10 +545,52 @@
     "bytes": 72082,
     "retrieved": "2026-10-24"
   },
+  "tatoeba/tur_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/tur/tur_sentences.tsv.bz2",
+    "sha256": "364ad61c0a4739fd58a6f3e18ea2355ceee6a5b510a135fa27cb3e8ef3dca32f",
+    "bytes": 8585287,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/ukr_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/ukr/ukr_sentences.tsv.bz2",
+    "sha256": "fcb9454e62978b2636d2465cbba4d383a76e6cf12030d8c675fc4ba420abf68c",
+    "bytes": 1996218,
+    "retrieved": "2026-10-24"
+  },
+  "tatoeba/vie_sentences.tsv.bz2": {
+    "url": "https://downloads.tatoeba.org/exports/per_language/vie/vie_sentences.tsv.bz2",
+    "sha256": "3533911c9a693e12dfd2a77be695a847a631dac46f01cb3a27017b20bdc5ea66",
+    "bytes": 422555,
+    "retrieved": "2026-10-24"
+  },
   "unihan-16.0.0/Unihan.zip": {
     "url": "https://www.unicode.org/Public/16.0.0/ucd/Unihan.zip",
     "sha256": "b8f000df69de7828d21326a2ffea462b04bc7560022989f7cc704f10521ef3e0",
     "bytes": 8382485,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-BG-100000-665ec17aeaa9.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "1c9a9e7fa96dbb730edf8df23090550e4f59b775982c0df8a85b09bdd13cd7d3",
+    "bytes": 1655,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-BG-20000-130c9c5f7b47.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "7e31ecf857ff2006c3c6dc83908a6969d3eb96788bfee3d979cd58b5eabe35cb",
+    "bytes": 9224,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-BG-5000-efbc29b2287e.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "61b209dc1caedbfe6322f78f6380832ed48611cfc172aa441dcd1947ff89aa81",
+    "bytes": 32141,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-BR-100000-530e0f7500b1.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "56ddb1bfd3de16978cc00ad644feca2551b598c2f82cb35aac235d686615f236",
+    "bytes": 79819,
     "retrieved": "2026-10-24"
   },
   "wikidata/cities-CN-100000-7f8d78abb95d.json": {
@@ -357,6 +603,12 @@
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "7b1f627d3fcfd3857672b260c9df253f08941b95ce0016d61f0c64859296e2e8",
     "bytes": 22214,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-DE-20000-023ddce59a8d.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "76bd98d144418ea351dde2c5f21928d52cd287c0a9f4511e977372e5eeea3b7b",
+    "bytes": 103955,
     "retrieved": "2026-10-24"
   },
   "wikidata/cities-EG-100000-bacafd9f9b54.json": {
@@ -377,6 +629,18 @@
     "bytes": 58007,
     "retrieved": "2026-10-24"
   },
+  "wikidata/cities-ES-100000-301b4da2639b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8f38f0613ea1a3cda73379c7e2e8c2bb768d313ec62f71b9b07591d380576047",
+    "bytes": 17744,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-ES-20000-f4f7c5d459c0.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2504738b95cf5d00aa08c5ff15fa1431257a05def05cf7248fb9704a8998c7e8",
+    "bytes": 83427,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/cities-FR-100000-81c1d12eb591.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "04365a1e9cdae8a818e7d5b34bedf575d7c869893fe801ba2ee19f5b72f78353",
@@ -395,10 +659,106 @@
     "bytes": 39978,
     "retrieved": "2026-10-24"
   },
+  "wikidata/cities-GR-100000-df4fee062ad3.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "b52c6d3095ee662fd01bf3725b4c37a2932c077cd035ec91199ae20e5a10cc8d",
+    "bytes": 2183,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-GR-20000-622259c9430e.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3b634ac04d216298c4c81d18f4d05ae143f95b50f877938fae60624091aa5d4a",
+    "bytes": 26484,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-GR-5000-78125a678356.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "300aacdd48bba6f47445184f27b81225d68c8618eed19077215bd3e024ad7c27",
+    "bytes": 68523,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-HU-100000-1acdb8b06fbf.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8ae730262b66e12eab2dfcca7262441299a50bfaef57571adb939ad75c96c422",
+    "bytes": 2184,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-HU-20000-5074eb7f2145.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a1be6281832ffdb65b5226b647025e705640a1728ccce5e8de3f972a222be16a",
+    "bytes": 16014,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-HU-5000-66d7aad7b509.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d3a41b8e81ff21e4cb19e4af59f2acbfe2ba1035eb54a363bc99446c1cecdedd",
+    "bytes": 70455,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-IL-100000-e584fc2c6588.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d3fb7c69aca8915a81effdcedaea407f2c00817aa02d7107fa5b0b43ce312933",
+    "bytes": 4279,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-IL-20000-ffbc75f0fb0b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "17aa62d7e9d513534caaa3b5b724ae8f745be34b1f43d0a60e8cb85e4edbbfea",
+    "bytes": 23085,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-IL-5000-2eaf9c19863c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "57a7ee71d88bd8b50bb5a0b8dbf74258e9647dc452d64c630e72a363d76f29a6",
+    "bytes": 46085,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-IN-100000-8bf51776b61b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8f2a687a3776374af2330d334960ed53ea0b44ccaceeadcefb80de16108f31ed",
+    "bytes": 84827,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-IT-100000-e4c480b9a9dd.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "e8c13815192e24352c020bec971ec81abe541aaca6534ca63ce5c043203a9af6",
+    "bytes": 10240,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-IT-20000-367b8074df86.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "cab8c84d509b19fa8fb09c8d4746f3e51451972f3f8e28021b48b19773cabf14",
+    "bytes": 24280,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-IT-5000-870fcfdb8d92.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "39d09b81313125758eb354d93a1108fce19412279e2be44f4e60398551c9d122",
+    "bytes": 36524,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/cities-JP-100000-8b95b80c3dad.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "59be0a7e252ca05bba2650fa63446fab00cfb588cb5e97f6d31d030b1cd2c149",
     "bytes": 74022,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-KR-100000-31191716f4d1.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "986b54fda8e8714af96d3876d9edbcf3d4782fecb1dd54b1b940a0ce8c9bfc50",
+    "bytes": 19157,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-KR-20000-5703bde40fa7.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ed6c743343e6739b99a7189b6f3ceb8a354fd0cd8e8e12e55715b57110d53fe2",
+    "bytes": 24113,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-KR-5000-468c0975da93.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "e0b9dc131251e36827d0c27d9062f26734d97f4dbcdfbf18bf396d39f77af615",
+    "bytes": 27261,
     "retrieved": "2026-10-24"
   },
   "wikidata/cities-NL-100000-e6217f5d649e.json": {
@@ -417,6 +777,36 @@
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "8ab130463e7aa2c4a74952426e7f7dcab6cfdba91643661201581b065d6097ad",
     "bytes": 87457,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-PL-100000-5dfed7d47873.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "6471d77d7a5572df4b89b77efcbe384cf9bff2787f2c44a87edb4274169d8451",
+    "bytes": 10015,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-PL-20000-d260a4b6d677.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "69b179ec7c7e047a245e5c661a717f3fcb2aa743a9721157f43210712aef908e",
+    "bytes": 56706,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-RS-100000-57c5e0d6192f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3a334e56e5264df174f8a2d863e0a0ba8ed2141df24db7bc25bd570b4d407e2f",
+    "bytes": 2979,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-RS-20000-1b6d5c90a918.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2c8ba420e16764113e5249271e931dddbde31b1d1783a0e42329c2d065784ad3",
+    "bytes": 15520,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-RS-5000-d222b589498d.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3e82d72a6b273a41193d5fb1024044137ce1f2d52732d8c0ec2cc76d0645a0a1",
+    "bytes": 28034,
     "retrieved": "2026-10-24"
   },
   "wikidata/cities-RU-100000-de9f6ebddd09.json": {
@@ -449,10 +839,76 @@
     "bytes": 79867,
     "retrieved": "2026-10-24"
   },
+  "wikidata/cities-TR-100000-14712e29cb42.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "e3f42e68858fc75313ebe9b04e54d235f7b60fa900f1823a035b99bd3c68fe58",
+    "bytes": 55199,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-TW-100000-af1a7de3842f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "26a9276ef184d6ce07cee9d01e9e300f205df65cd5963f85b0d552e9a7849df2",
+    "bytes": 20529,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-TW-20000-34fda2389fd0.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "99c7c44594951196a6ba098ef52b2157b84f5283194dad544d7c7f511a5fe1c3",
+    "bytes": 68062,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-UA-100000-ac81501c3803.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "973ce28f534cd35e0dd37ecb55f1f7e3d23da2ddb470a9c317757d7246357d52",
+    "bytes": 11866,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-UA-20000-75e19afb4cb5.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a74334d76b706d3177bdf4a07b36c29f91a2ac34b3390396bdf7e6f2793d1aa8",
+    "bytes": 52620,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/cities-US-100000-5dc2183a6c63.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "8f1b00feb15e705b8e4d902889993213c1fcb3a072b20ce339db47b6f8ed3c91",
     "bytes": 92466,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-VN-100000-c9a83edd0887.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "becb72ff4b0082209bfaf461aaa1eff61bf694910f7c30b85bac14dc49585238",
+    "bytes": 1664,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-VN-100000-f3fb6ad21831.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d8b58eb50def5d2c40a33d5ad99c8003caaef7aefcb91b5abf994f8e52928e58",
+    "bytes": 8207,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-VN-20000-4dded645815c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "becb72ff4b0082209bfaf461aaa1eff61bf694910f7c30b85bac14dc49585238",
+    "bytes": 1664,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-VN-20000-b8bba13051ef.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "59b03f08cd6365bf4c823ae949284f26c2df70d88ab467d2fc81eb2cebed7165",
+    "bytes": 8468,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-VN-5000-3e41dc7a5c95.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "59b03f08cd6365bf4c823ae949284f26c2df70d88ab467d2fc81eb2cebed7165",
+    "bytes": 8468,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/cities-VN-5000-583785f8f7d5.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "becb72ff4b0082209bfaf461aaa1eff61bf694910f7c30b85bac14dc49585238",
+    "bytes": 1664,
     "retrieved": "2026-10-24"
   },
   "wikidata/cities-extra-US-4cf89280a2e7.json": {
@@ -461,10 +917,40 @@
     "bytes": 351,
     "retrieved": "2026-10-24"
   },
+  "wikidata/cities-shared-RS-250289b2a621.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "7eba1a0638c0cb9960598e82e1f348121821af8ca0196e4cf176a1cb541dbba5",
+    "bytes": 4084,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-BG-bg-de5f75484ac5.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "c870e07297a8b56f6146cd272fb2229bcf8d91992a0065cef58f1a236c213f4b",
+    "bytes": 29007,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-BR-pt-228b4e4349f3.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "db31bb50d2b819a1fced30a3b8422e5b671c2fc08624da99c7f5bc011fd81704",
+    "bytes": 103673,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-BR-pt-8c920a078c80.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "6f74e623eb32b82750bf6e6ca8d38ea658a9b9043a62738b3c727e530f976437",
+    "bytes": 103673,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/city-labels-CN-zh-hans-553ed5985d1e.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "675ba85b3ddd01b2d95b9fcea76058076d98d27b81ad7d1f3ec5cafbe0a7f700",
     "bytes": 93577,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-DE-de-f19e9ae94504.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a4072d376b6de5c506825a98a585d254cab50a96118a23e64c598ca505212a3c",
+    "bytes": 91377,
     "retrieved": "2026-10-24"
   },
   "wikidata/city-labels-EG-ar-1b0e05d24f40.json": {
@@ -479,10 +965,52 @@
     "bytes": 52079,
     "retrieved": "2026-10-24"
   },
+  "wikidata/city-labels-ES-es-fbb62a2467df.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a7a1d2f2d037a77f23cc1f456d483c0e4928c260becf661950540786d5ee7081",
+    "bytes": 70133,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/city-labels-FR-fr-349adbfdd210.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "3b8a946dc4297dabac586867e096833edf98952193a072ad4399c2409552e469",
     "bytes": 35435,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-GR-el-5a2dcb3e79aa.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "130d68271147f7966f6c2e970db027f669ef59e5ed75e59377c5bcf58712fe3b",
+    "bytes": 63467,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-HU-hu-7dd16ae2a271.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "134ef94e402f86c6c64c7bf53bfdb1e164b7f7e3c3c29530b4ab9f0d41309400",
+    "bytes": 62101,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-IL-he-443dd6e9e9aa.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5bdee80122e979a7ca0d845f835695ae601a4341d91253b800eba14ae26b1cf9",
+    "bytes": 41407,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-IN-hi-1433c2392afb.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "4862efa49ed06c22423d43a56c009be723950e1323666762f663aaf5b76b954c",
+    "bytes": 122462,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-IN-hi-bdd97ff6da3a.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d0cd3b1e443e4113c219cf08857078bfa7cdbf3cda98bcc98653f93d88ab06ed",
+    "bytes": 78106,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-IT-it-801e41e1db04.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2a98c6de96eb56bad2aefeb31c9e9313f8771415671e9102d22e748a6b5228d4",
+    "bytes": 32008,
     "retrieved": "2026-10-24"
   },
   "wikidata/city-labels-JP-ja-6a2252f6c211.json": {
@@ -491,10 +1019,34 @@
     "bytes": 65074,
     "retrieved": "2026-10-24"
   },
+  "wikidata/city-labels-KR-ko-23df5fd28079.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "620a0f9cb217935ccdba310bdeb9e260d17cfdd1ac19aca7b01364179a372795",
+    "bytes": 23945,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/city-labels-NL-nl-608153fabe07.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "5e46157d8632b47e6548cd0ab9b93efed40784ca427dbd139e25c4915a005efd",
     "bytes": 76408,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-PL-pl-7725dda728dd.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "40ecf9ff059e1359570f99398d6b64103157123f03c226e15120fd1310997a1c",
+    "bytes": 48447,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-RS-sr-1d46a7be9daa.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2aa9b5d5fb266d0d102e5f8c85dc53873394407456e287e483241ee8871b8bc0",
+    "bytes": 16964,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-RS-sr-bc9975792691.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d415278f04a974d776801e488d45f94f915b016820456419b622cdda43d14afa",
+    "bytes": 25359,
     "retrieved": "2026-10-24"
   },
   "wikidata/city-labels-RU-ru-4197e32babab.json": {
@@ -521,6 +1073,30 @@
     "bytes": 53980,
     "retrieved": "2026-10-24"
   },
+  "wikidata/city-labels-TR-tr-e8ace1856515.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "fb80753e7caec7331cabf0010eb072c7d2f7acbd233ad85c59b2d66fe8ff60d4",
+    "bytes": 47570,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-TW-zh-hant-0495549add72.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "50501cfc7614e7f5b7bb2f6ba568e5fadb267cdcc5ba8a5e43dbc4700a5b35e3",
+    "bytes": 60931,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-UA-uk-6869220462fe.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "c68adc574450fbf28c2a7a62ab130d425f58a9737a199f4891a7b60a6510c4af",
+    "bytes": 47869,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-US-en-426fada9f9a0.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2267d9677f1927486919c12587ca6229a42a0ae070f3c1cbcf129f7447043056",
+    "bytes": 119567,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/city-labels-US-en-612bee56effd.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "93d484df82180cf0dd916ca68d99e747f7f0ca23b8d9f165c93e53fbdf506a4c",
@@ -533,10 +1109,34 @@
     "bytes": 119567,
     "retrieved": "2026-10-24"
   },
+  "wikidata/city-labels-VN-vi-85169fafd49c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "f317cad6f020a5e1b1c6bc30453c4f9ca4a49ca6d0f8fcef118b721605fb8a8f",
+    "bytes": 1481,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/city-labels-VN-vi-c19a236b13ca.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "923e9b24413fd89d98652ca7ccac3be904001c5e827e716c286ecb2551dd3751",
+    "bytes": 7460,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/countries-la-c7530040f26b.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "7713e175339f68f3b240a8bc7b6a57884afaec221f5eb054cf3447fc79a9b32e",
     "bytes": 49396,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-BG-4b759afa922b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "b7d6f4c740a799cc617c247e59f8d9acecfc993637c4723c37c729436451966f",
+    "bytes": 206092,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-BR-9ffa5150eff0.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "88b070942627aed65841a4523e7463cd630c3d8b6d38b569a938270cab8daddb",
+    "bytes": 206099,
     "retrieved": "2026-10-24"
   },
   "wikidata/family-CN-d5284ee6a1f6.json": {
@@ -557,10 +1157,46 @@
     "bytes": 205807,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-ES-d8d3fc044bd5.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "4441730546ce2d760c412529e3256159df12633c1f98eb25a23253a4cf03b483",
+    "bytes": 206470,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-FR-e56419339363.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "e3b9389bb961ad52dd5445db56a1e275144252b6f716b79d7fda2ff3838c6aa5",
     "bytes": 206542,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-GR-937e27e724ab.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "c2ba5b9079718f35c7cd04756cc9687d68af6a3aa31b6b4901be3a584b1e2b70",
+    "bytes": 205872,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-HU-89f99096ddf4.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5ceb5b81dca7e830f10c17fe0858638c923ba8d019562e295b5420fe5d01f323",
+    "bytes": 206627,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-IL-a4cb9416b565.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "4602cb44fa58923c2b0632fc36b81b7fba2aba30c772ed9e17173ea909a14427",
+    "bytes": 205976,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-IN-b8152dee77da.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5fd91787a91f38897dfe2a3e1a4313be316387de19718ecc181aa8c568bb2972",
+    "bytes": 205799,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-IT-78194286b4ac.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ccf6462127ffbf999978335b019308054ac092f885826eeff6b074bcf94dd5bc",
+    "bytes": 206447,
     "retrieved": "2026-10-24"
   },
   "wikidata/family-JP-4a9c58ab192e.json": {
@@ -569,16 +1205,34 @@
     "bytes": 206722,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-KR-05a0cdcdf084.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "60a10c43ce40066b71ce72883c6c94dc496e019967484027787bcb743b2ea339",
+    "bytes": 127371,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-NL-6da167129d93.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "84f73e340e8a4d9715a888aeaf0e7936cf9a408b0ab88be533a295340e1e3284",
     "bytes": 187939,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-PL-d4bb1a46b99f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "9dd0d4dfbd0977e0ec01bc19294126e8b097d6d88dc839da97ba123b9f114177",
+    "bytes": 206441,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-Q101352-native-th-63dceffdd433.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "aa1d1521ce7673597177b44c26ba6705c89fc75faf503d1af5864d405907f6df",
     "bytes": 27797,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-RS-6b10cec0751d.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "b546de7fbba05af102176b37919e7ebc4dfbbc688bad6cf8e6650c29b175c046",
+    "bytes": 205844,
     "retrieved": "2026-10-24"
   },
   "wikidata/family-RU-78067d505050.json": {
@@ -591,6 +1245,54 @@
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "a21202e8b6f999d6b6c3e243ba9c9efe07f3408e9f594677cd2c9741140a1c65",
     "bytes": 206167,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-TR-4bf792f7af11.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "bc268d9a42ac1a437e8b2d8278cbc458dd8f1447b4771202daf43bc55e8badc3",
+    "bytes": 206467,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-TW-9c5c57d7efb4.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ff84d7943dd7b997002fdead5efcd833462a43b923be133e923115fbe4905bca",
+    "bytes": 170493,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-UA-18a76e916af3.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "50903ba188f823596bd1fe76e5f01d61573bf8782dc36d9cc71fb2481c9b80db",
+    "bytes": 206099,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-VN-2b652a81df98.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "fb008330768bf47c2211c87080aa9c628dd7c9eb171906379e3369e01213aa80",
+    "bytes": 72336,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-BG-bg-0-f2cfc97bef4d.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "f360b2231f1bfc52393bf03f8ba4b50dc0eaea1b5b7bdf59024995a29d1da382",
+    "bytes": 192642,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-BG-bg-400-72d7be1b2f87.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "816191373c9320788ff358cf487dda98c6fce014e8f048de7ead1401bceec9de",
+    "bytes": 172666,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-BR-pt-0-7f035e7c65ea.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8b321548383f6e62276f6495f0f378f28de3241489d6d99049c4a64db4d28538",
+    "bytes": 179093,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-BR-pt-400-ceefdf016fb6.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "50b64686ed8ce39daeffbdcedbe1f5aad2703a6ca396713895bde9cee46d44a4",
+    "bytes": 181840,
     "retrieved": "2026-10-24"
   },
   "wikidata/family-labels-CN-zh-hans-0-5cb607f97daf.json": {
@@ -629,6 +1331,12 @@
     "bytes": 163597,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-labels-DE-de-0-4589cf8abcd1.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "93b87160fd55927747db28bc2cce0a1cb6667963ade2803a83c74adbb8735d73",
+    "bytes": 200105,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-labels-DE-de-0-e086120db78e.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "7df20b11edad521c822d6f6d22982f5c538d1d66d2a84a2f72c23af26a833ffa",
@@ -639,6 +1347,12 @@
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "e8a52f5cb838269c3ded3de54a228ccb6f11de754a45e5f1f3940767e995994c",
     "bytes": 156251,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-DE-de-400-cc3966e6c1e8.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ac1c370346fe30afcf8b3e6d1fd271c37cea236213c0cb07d70ce3ebb1ffd4f8",
+    "bytes": 200482,
     "retrieved": "2026-10-24"
   },
   "wikidata/family-labels-EG-ar-0-9ca1e73ee660.json": {
@@ -677,16 +1391,100 @@
     "bytes": 125572,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-labels-ES-es-0-f89215c32a48.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5918debea373d460756ac76d2e2784d7ca442eb55474fb05548db5ba074cd8c6",
+    "bytes": 186632,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-ES-es-400-2476027c4d85.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2b6f3580f25b44b5dae1fb154312bcf7fce91863ce239096d067927d65c51c94",
+    "bytes": 187502,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-labels-FR-fr-0-6fc811a88f74.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "d29c3896ffac4ad08674b15f2af4a9bed4bf6761d8644da05bcf481d7cdb72d0",
     "bytes": 138780,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-labels-FR-fr-0-805dedbdf54f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "1edb140ccd368653157bc3d73ed842f1755d9aeb4d6899f1e2a1c8812c05c89d",
+    "bytes": 180786,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-FR-fr-400-70ba74296c91.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "541fad4e8c5d3f87c8d7c8cc1fafb2cbecf123c18b7b3b4b8d7cdc94eca6700f",
+    "bytes": 180848,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-labels-FR-fr-400-93fc9824dabd.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "912f114492fa095c6fcc25f1e7d308055f598c67770593cbbed07f4d6ccc80fd",
     "bytes": 138842,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-GR-el-0-41fb75775645.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "4b13448edfd9444747bd7883cfb831ee1a98123f188c38d15c09d2faa11c40bd",
+    "bytes": 185759,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-GR-el-400-34902902cae2.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "17b271c47a46567e2b100732b55d5141664b130a60e64e4a26c8368ba9d686c0",
+    "bytes": 201200,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-HU-hu-0-4abed0891112.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "41b335e704dd06f66b6998eebac4f729f14334c4a218c98f4545980303223336",
+    "bytes": 199507,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-HU-hu-400-a9c02c4e8c2c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "582b80d26662b4c367f5f634d0a97d134863d3d0340ed68fb4fbb7b42f6392bb",
+    "bytes": 197751,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-IL-he-0-fac8914671c4.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "21fcbcc5dc8baf551a79f98fa7ce289ae96b8c3ef0afa127952e71f32243c135",
+    "bytes": 195355,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-IL-he-400-f3ec5a03ffad.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "26fa6fffb5e29a24e03c895cd0eb69eeb0a87fee4333e870e8c32a9a490dfe76",
+    "bytes": 181951,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-IN-hi-0-6379fd0853e9.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "1ae070f81d9503cce7da5c2a1d782b3766be9a7496fde097218122408cea05ff",
+    "bytes": 142955,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-IN-hi-400-49b0bf7a8d86.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8ad8a3e430426296a91e630b59ceb844bf3b9bb1f2dd16966f13b9165de05291",
+    "bytes": 145809,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-IT-it-0-61fd90879143.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ce698920c6d70be2bb73e6720421d8b06595a8746eb9b87ce59681a9d54658f7",
+    "bytes": 175158,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-IT-it-400-57654c7b3f1f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5b032b74dbffc8206d1520ea7d9d87166208d1e0c814949c3e410a5239842930",
+    "bytes": 176368,
     "retrieved": "2026-10-24"
   },
   "wikidata/family-labels-JP-ja-0-14293389f0e8.json": {
@@ -725,16 +1523,64 @@
     "bytes": 230182,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-labels-KR-ko-0-dc578b7435d9.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "507a7e00342d0eefa85debaf667983f943a93ce91633d6cf69b895039c2e09df",
+    "bytes": 268943,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-KR-ko-400-6b1ed83c9492.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "7dc2638901a539d35d62a545d6e4ea6343dcd5a4c2f70719983229962d362076",
+    "bytes": 58612,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-NL-nl-0-1fee7bec9027.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "43b78a2eb6ca478b028684042e89bb8ed006970e32909ad27deec729b9c34a7f",
+    "bytes": 166019,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-labels-NL-nl-0-6c97d04299ea.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "772cb583444a114296b167abe7530e7e7b96e1e7346f92fc3db471a2b8db559b",
     "bytes": 124748,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-labels-NL-nl-400-229786e61734.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "94702af3d078c533d67de678e54ae8366ce70b50d9abf3e677cf0de966c287bf",
+    "bytes": 143371,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/family-labels-NL-nl-400-6d30bc616ebe.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "0297aa1101976e6016e6dcf1658a723a650e0516991ea280496b0da5771d1fda",
     "bytes": 109974,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-PL-pl-0-de5d71bfbe2f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "08750b731d9877081b5191a8718c511e44f71e449680046b3cb225dae034dadf",
+    "bytes": 216421,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-PL-pl-400-e647f278a62f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "f0d36af1dd63551b58ed17a3ad3f6676e125abf851bdce299a79dadaa1534a95",
+    "bytes": 218888,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-RS-sr-0-e188b772da74.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ac16804b996b1aa7f1c75ec22d6a7a41de39a6a0339e44d4bd60f7e578ff641c",
+    "bytes": 186311,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-RS-sr-400-5d288fb6e562.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d99144d1b1ca3daad9b0c3ee5374e61479f923194bdbd098f23ebf613288386d",
+    "bytes": 177108,
     "retrieved": "2026-10-24"
   },
   "wikidata/family-labels-RU-ru-0-cf62b364a1f2.json": {
@@ -839,6 +1685,60 @@
     "bytes": 6259,
     "retrieved": "2026-10-24"
   },
+  "wikidata/family-labels-TR-tr-0-38aae3a3a7a1.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "21dbfad2ded3a5578bd9a733ff6e45408721961b3534d5a1ec929fc12c8567e3",
+    "bytes": 212825,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-TR-tr-400-2a3301ec1876.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "23f0a41041ba83bd46e9d5a7856eee3d5c04cc494737f3dfc2a701606604372c",
+    "bytes": 217693,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-TW-zh-hant-0-979389264403.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "1eea585972310b19fdbfd1780da536fc0adbcfd1969d6ad77b40325b010772c0",
+    "bytes": 171899,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-TW-zh-hant-400-80777864ac34.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3726dfeb51a9821e6eaf83e464c4a98922da45184283ac9d17d1c5b8e096057c",
+    "bytes": 114485,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-UA-uk-0-d663433e7ed4.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "742312b2706398b2fb7726f8983d322ebd53cee98229d3edabe6fe3410c004b0",
+    "bytes": 293385,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-UA-uk-400-065826a8ced7.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "e56294a154db0227814106eb303938895dc273ebfad440f76ec712789f47eb7f",
+    "bytes": 205096,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/family-labels-VN-vi-0-756f9d7ce09c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "801737e654802668649eafd5873b49f64561d9bc6857fef8afed3a47f7bc14dd",
+    "bytes": 130942,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-BG-7c69a04e1a9e.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3e2480d5322e11c9dedabec74ad8f8f41e5e10f40476234142343a553594d8d7",
+    "bytes": 546076,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-BR-9c9c4f4655e8.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "70a08b1937df75ea29005ea6a84c30e93315770be484d96db0d2633915bdffe5",
+    "bytes": 546660,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-CN-39a41b65f54e.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "8f2732454d6a42d906135b560fd03e347de1ae4162c8b046549790e491262a3d",
@@ -857,10 +1757,46 @@
     "bytes": 501971,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-ES-8482122ff7ca.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d3aafd2a56f63ce7b5868ec7d0e898db567623bfae81aa47a965e0ea8a025527",
+    "bytes": 547028,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-FR-5bfabf5eaf87.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "9edb40ff2eb13d99287632a52493d6d09d925689548f6a345e2495b68d61da7c",
     "bytes": 547351,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-GR-af11ad25e3ca.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "147e83bd164b14b65b236cd1e4089529ddff7ee791279f2dda0ff5ea7f64b780",
+    "bytes": 545991,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-HU-dddb05066c32.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "4fb292fd3811058e46cae78fd5b5c5aa8d531dcf054923a962879dd9c7fa97b7",
+    "bytes": 545947,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-IL-fc3d003ab047.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "82f91d5b8480cc657f7ad4d75beaa57f617f464104ea4a1127813858644ec7be",
+    "bytes": 546187,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-IN-fd1a893c8dfa.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "52847ee501572f2e57839ae50fd2eb56fb1564355d6fa854d45655da3abd84c2",
+    "bytes": 546132,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-IT-60d00c171a5b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "b7534ba7f102da85110e2a50c2bd887d255c58a6638849df019cfb77c81e9908",
+    "bytes": 546508,
     "retrieved": "2026-10-24"
   },
   "wikidata/given-JP-a7bdef80c751.json": {
@@ -869,10 +1805,28 @@
     "bytes": 547569,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-KR-27fe57aeba78.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a1415222c9b124e2ec5c646bf2709d0918678cb7c9c94de98483345a61ab4a12",
+    "bytes": 546632,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-NL-baf6eccb6ea5.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "86a4c89c443b4485bbc6422e8b6baeda1f9fa8b00aad35f2b5b27d8d87ee34d4",
     "bytes": 243231,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-PL-a12c348a5e6f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2df04e722369627678d6450a8e6d2c860eeda3ba8e3680108598eb942a85d356",
+    "bytes": 546017,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-RS-1a62c1887ddc.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "6f8f3ef14bb0d04feca1e4527247608408317b98544185771e24d9e7ee316471",
+    "bytes": 446880,
     "retrieved": "2026-10-24"
   },
   "wikidata/given-RU-c511b7d00e5e.json": {
@@ -885,6 +1839,78 @@
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "3a1666669bb1cffde2c22693e1e899251a8fbb1087a408c0ee5e887619b95f28",
     "bytes": 435687,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-TR-75f9339daad0.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a6f3b7873db91063545c2eecc0021a3abe30f03536a4f0dd3febba869f17e8ce",
+    "bytes": 546965,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-TW-2abe3632adcd.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "63f621951bc6a0115dc5f4466005383e818499c1164f7a581fd89e32e1435417",
+    "bytes": 546365,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-UA-c2c5ac9dcdca.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "6d89a00924e88594a49ab4036c042368794019107d03372a2c76747d6b3f4153",
+    "bytes": 546851,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-VN-af5938172bba.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "fbb391dbf9880c9335d428f451d03a27d0ddfdc5a5ff4035a22e7e1db42a91c3",
+    "bytes": 220940,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BG-bg-0-fd2cca54c71b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8ad7953cfdfcbc4fa88cc76f89053203c3df26e747043a4ff3513f8106091327",
+    "bytes": 163506,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BG-bg-1200-808c6e198837.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "0fe3b09deb9edc5d3ad9e5e80da149723fcd7a8c19921cabed2b7cf5dcf5d65c",
+    "bytes": 117560,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BG-bg-400-6e7a58e08e19.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "551333f7c365f31b7edc28bd358624f6a8f0acdbbdd925df3d5fe1edec07443c",
+    "bytes": 163866,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BG-bg-800-8f280b58f329.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "abe4979f4ec31bc643f8ea3a570984f671fcf52c1df21d44db076b48e8b4834f",
+    "bytes": 156514,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BR-pt-0-407b49a884f0.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "bb1be9eab90e741d9345d6d30d8e544cb4052f4597878a62cacbe37ab35f292e",
+    "bytes": 168406,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BR-pt-1200-cba08ffcf96d.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "87ac8feb54b3a9da6689e600af1c61d3adb787c0e0e0ff9113332af71b0174d3",
+    "bytes": 134796,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BR-pt-400-4e1fa1693586.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5fd1be2c1721c93e67abe662fe8256c29ed40555bf099633016718cf24da8147",
+    "bytes": 176167,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-BR-pt-800-17e8c207c5cb.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3ac19354d0daf5dcbb9b3072ce9c28763de4f9064f02d558b6857a84b19f51f9",
+    "bytes": 175752,
     "retrieved": "2026-10-24"
   },
   "wikidata/given-labels-CN-zh-hans-0-357a04c66685.json": {
@@ -959,6 +1985,12 @@
     "bytes": 104396,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-labels-DE-de-0-af5571b59805.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "311dad79f81ddcee51fa1c33558ba0c176df9b474f30ec3be7e07c372d24be02",
+    "bytes": 175720,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-labels-DE-de-0-d98f3b668fc3.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "202f30dd32ec754b1cdb2d39a647b2a0a238817979fca780aa25c3831a9246cf",
@@ -971,10 +2003,28 @@
     "bytes": 99414,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-labels-DE-de-1200-ad4795bd5fa6.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "eb626421417c03e1ae854a17fc5d7fed1e5b899ab95c3bc4ccd569529f848775",
+    "bytes": 130522,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-labels-DE-de-400-56f869d6d1ab.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "f0fc3b62340b06ff47e1a95d5cf6aa5553b51b45001deeb6bd581c56d93b5e1a",
     "bytes": 133533,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-DE-de-400-c49a85ca0340.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "94f51b83b10759ae9fed6ab62dc3de071baed1cd666de309c27665d117d0e802",
+    "bytes": 175539,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-DE-de-800-7e9a0bbf58ed.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "c8acdfa288662d2db524bd63d04553757a641f736c31f08410360983c0713e6b",
+    "bytes": 176950,
     "retrieved": "2026-10-24"
   },
   "wikidata/given-labels-DE-de-800-e8070f9626e1.json": {
@@ -1055,10 +2105,46 @@
     "bytes": 123810,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-labels-ES-es-0-773203555112.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ad4257aeb74f512f1f0c293c51952cccecc91de15e17049012a3c3c478a7bb06",
+    "bytes": 172606,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-ES-es-1200-0d3b176b7314.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "b4f72044a224f95a10da2b500b4bca21f0ada61c8e1fdcdc37233522205860b6",
+    "bytes": 138301,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-ES-es-400-0b98ec0639a6.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "7d3a11d5dd8276a565bd62108130eef7a142e0bfdce07de4f095a67bc49c5af6",
+    "bytes": 177345,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-ES-es-800-ab6dd25b1320.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "e47bdb73833823362f7296c9c54f2c6f09e74c9956b8c7f1196f963a80945231",
+    "bytes": 189592,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-FR-fr-0-0899d7f67bd8.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "90b885bdc1578fc0b36b8a4fe7beb8b3c84b3cbd6ec58ca69c72908018020a9a",
+    "bytes": 175159,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-labels-FR-fr-0-82e03d848d75.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "379a2d8d6fb88540f169b6dfa286e7edf5e0b1faeecda6bb505767e6b44b4364",
     "bytes": 132271,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-FR-fr-1200-2c795008e5db.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "bb2e9b8af6ec628d18c4a1788967ba0ea684b44b6c3345ecff62797bef4c1fe5",
+    "bytes": 131635,
     "retrieved": "2026-10-24"
   },
   "wikidata/given-labels-FR-fr-1200-7dbb6d512ca8.json": {
@@ -1067,16 +2153,148 @@
     "bytes": 100404,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-labels-FR-fr-400-ce321e96b09c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "e707a242ad0e8c7be000ed76a2984d24f49e85daaad3893160424a8f00081a86",
+    "bytes": 175386,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-labels-FR-fr-400-ef0e89bf2291.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "5cf3bce6c2a29cee565d234000fcf3ea2bb340379086714b72cf70249dc95c41",
     "bytes": 131391,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-labels-FR-fr-800-649e7c41c761.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2a814d94c91255b1a40f4ff5476957cd13d023bc49fafc28abe6a357b5a3fd1d",
+    "bytes": 181012,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-labels-FR-fr-800-e54759fad305.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "0d353a45364713c625134afe03e709de67e73d81e56556b15639fb1829886d13",
     "bytes": 136316,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-GR-el-0-7d76d44da185.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5f00e1497459050730a5818721808a648e6688c513fb65dd9932f32e0f274c1d",
+    "bytes": 166833,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-GR-el-1200-60d2192bf6c9.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "bc5f681dc0a498f8d7d2ec3b288ff660151105ebad418b26e54741fd262bace1",
+    "bytes": 157483,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-GR-el-400-3bf4469b809b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "ed72176450cdd4194cf68476c2aa5ce276120403314ccff40d89bd816f48f364",
+    "bytes": 162749,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-GR-el-800-fe6827c9a77f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d656ff7e6fa067e0c6002ce878f93765e023dd1855ec4663dbdf0ee9bead3235",
+    "bytes": 181759,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-HU-hu-0-c98c45fb10bd.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "1c736598bd71375405e22048d587e01adbd10b3726c2ded12bcfb81b475ddc9a",
+    "bytes": 175533,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-HU-hu-1200-fa9fca7820d7.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "6f0847a767fd88f7f1fb7b29c894989d496aa8a389c27e79559f77f56ad8024a",
+    "bytes": 124899,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-HU-hu-400-b46a72795767.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "c25172b07ba9ec2a10ab43bd31780d369a3023e47f841361f254ffed6a56f2bf",
+    "bytes": 168951,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-HU-hu-800-48b498df2edd.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d2f6bdd48270258dafa9ad34844d0600baa7d9374c3eba1488fdc4b06aa7cc53",
+    "bytes": 175262,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IL-he-0-a39f42d3321d.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "b6a07dbd240811c56672e8078e4f1ce793cfd51477115339db2d4bd3dbd7f009",
+    "bytes": 190851,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IL-he-1200-9e4a4644de8b.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8acc7f238325ebbf8ed2c070f876817b23776ed03c1d1713e424d91edc96156a",
+    "bytes": 122041,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IL-he-400-b51b33a84679.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3a68107491998430cc113dde53cb4a6311291081fb54ebd15b63e450eef03036",
+    "bytes": 177311,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IL-he-800-50772920a4bf.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3d9b824893cfb0acabebcf8a06ac7b426d682ee57a393eacfd6a633a8b7669be",
+    "bytes": 192126,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IN-hi-0-a690ee0b6301.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "833ae84b14c1d02e43966cf8a4397ca14850f9ac9b1bb9ff30cbdb565efaa283",
+    "bytes": 145975,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IN-hi-1200-3b05e309eebe.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2e8b68aad8e73f51b7cf8fd8b0004c8fdebd765e2bd45cc3a3c441097761b649",
+    "bytes": 92399,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IN-hi-400-d8a6108c8290.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "e2d8fa994838165b4decda5089207ca8426cd3ae372789093f721b0ae65fbe71",
+    "bytes": 146691,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IN-hi-800-99e60f264806.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "93f252afd3b87d1bb4e9938a19808750ec67c4f7f7bf58a69c5ac8b54e050c01",
+    "bytes": 163841,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IT-it-0-d4d13a1b03d3.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "dd0ffe51a11b1aaaa40ec772e73fef1920bf3c3efe4c59c79ae5ed690c3c8b1d",
+    "bytes": 176098,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IT-it-1200-a149fe963ed5.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "8379d3874971abad6c069df7262bd0cbd7a52a12e67de374385a6f4d8608c933",
+    "bytes": 133042,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IT-it-400-8ea3ee98b775.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "7f75836636860a9281637179839a2c9a8a896ea3d50cbd7d5a0301f03a44c37c",
+    "bytes": 173437,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-IT-it-800-a8722a1a67d6.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3ceb6e62d8ef4fa55917a6c47826681afb4e13c110e1b385371c566ae34b194e",
+    "bytes": 178465,
     "retrieved": "2026-10-24"
   },
   "wikidata/given-labels-JP-ja-0-0a6994752d3f.json": {
@@ -1151,16 +2369,100 @@
     "bytes": 226196,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-labels-KR-ko-0-d2f6b2246cf0.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "f9ba4eba8e3119e66e01471d89e679e4ef38e62ba987c2f387213154cadfbd36",
+    "bytes": 242437,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-KR-ko-1200-b7f1383819d5.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "b0f79b870f3ffcbf7f6d73cb6a3a1e9f0b37dfa38796e0a31a451f0b6c8f06ba",
+    "bytes": 128066,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-KR-ko-400-dff0563c9096.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d22543ff383e93b2d4be20e873b8ced3a923b0d1e936bf1fda40273ab397a790",
+    "bytes": 220600,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-KR-ko-800-24e33bbca8da.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "63a9d55e1539df701e91dea3bd350ece04e11fa195ec980b28ee541426f7fee7",
+    "bytes": 220459,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-labels-NL-nl-0-28292f9e6381.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "a82f91bf805d476a54b7cb14293adcb60d17207ef4f36aec479a503fee8cf7ec",
     "bytes": 124512,
     "retrieved": "2026-10-24"
   },
+  "wikidata/given-labels-NL-nl-0-a0839e6c4949.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "fcebaff0ccf85f6c36b7951dda37537a7ce73b15bbc23dd04a774c3dc2d9b0d9",
+    "bytes": 165366,
+    "retrieved": "2026-10-24"
+  },
   "wikidata/given-labels-NL-nl-400-617d8fe0ab27.json": {
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "b0f268e973f40649937a834c96f3c05b79246ed218ad765d27d23e5a8be07874",
     "bytes": 84278,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-NL-nl-400-fb09f5d08176.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "2c4d5b3c43292bd7e4abf42dd8e5a3d39070c216afddf2bc6a9136ac40d02fe1",
+    "bytes": 111165,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-PL-pl-0-a88b78d9485c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "70f678c2f51b24c002b5e7bc54e495f0e140b63499cb34156fd59a52b8442800",
+    "bytes": 187810,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-PL-pl-1200-7017954c08b8.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "9950e1bed78561b678c3ecb8bcceaa0cb1cd2ef1a704521e725ea09f68546a24",
+    "bytes": 126232,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-PL-pl-400-bc53691c4074.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "140d87503206bc9104464497ba30336e3b81b4713fdb74785e01c4955228fffd",
+    "bytes": 189007,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-PL-pl-800-6e6ba585a19f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "40a3a04d37860ce16258d0b066ec30dccfdf974897833f8f5b8bbac76c253fb0",
+    "bytes": 188349,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-RS-sr-0-212f38180404.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a436d99ac8e3c78fe1cb930aa0428bfeb5be93e710e34b2f90d7d84f8b1fe385",
+    "bytes": 170477,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-RS-sr-1200-d6ae8d52be61.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "7bfdf6b0e448511bb6540b9d23e0fe3a96da3449e222d9e9be475e3863caf7a7",
+    "bytes": 6392,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-RS-sr-400-25c8040d50d1.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "7d635e442d80f6a9af1dd9dd7124054fbf23c301c591f5938089950e9b5953ab",
+    "bytes": 162502,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-RS-sr-800-0e7d1707deb1.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3bb666adfd4d95d9a5512fe6d982c3a3f58d6414c5fc7a6f49f099840ce12df3",
+    "bytes": 168811,
     "retrieved": "2026-10-24"
   },
   "wikidata/given-labels-RU-ru-0-19d69297007e.json": {
@@ -1287,6 +2589,90 @@
     "url": "https://query.wikidata.org/sparql (query in scripts/data)",
     "sha256": "acd2ac43498845f7c9f5896cca8530085e2274b41c9e894727f5366a148eb6a6",
     "bytes": 90662,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TR-tr-0-f9cbc6ec6320.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "abf593b7e3f94ac5fc4c168ae353596f285f6e32fffe787ed9d30f889ae7d045",
+    "bytes": 205630,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TR-tr-1200-53e018fceab4.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "0d5169e5573acf84a3b3d9e32110a90bc6323dbc1d7eb7dc1b5ec7a8088baa32",
+    "bytes": 122938,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TR-tr-400-c3881f9d714c.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "9994c9821dec56f05ef3805459248fbc131bb3ed3212602c7c30ef290ca80590",
+    "bytes": 206530,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TR-tr-800-8882a2ba2616.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "911d0491edf0760e48990e53373e4382e232852436305674e2528498b1d02785",
+    "bytes": 216838,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TW-zh-hant-0-957d9c309a41.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "38ba5f66881d47ae3ff66770a99ef9a39d7dd79432501eee18febf85d7e2444a",
+    "bytes": 162653,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TW-zh-hant-1200-c59a151f7b58.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "a16fa1a5575c594d533f5487421ecaac474b6228ad27ae3527c882605f66ff2f",
+    "bytes": 111087,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TW-zh-hant-400-a5d19b4604a7.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "5d5cbf6d2a4bf2c2c5afdc5aa97d5645fd3e3dc398e6af80b25fb6f6d153ffcf",
+    "bytes": 166821,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-TW-zh-hant-800-1dbe981e6194.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "58a50cd9751d4a3b7f649b319c3f50b33d997cc9ed08db3520110158d1d445a1",
+    "bytes": 173634,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-UA-uk-0-e2cffa8c8a2a.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d4530b3f74c2f063873e7833223914e21f149148395d3cd1ddb47baa70a36343",
+    "bytes": 175576,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-UA-uk-1200-ddb12355763d.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "d269a506f83cb7e7e9e2b3ca0e3e8d2cd1d9faea3879170cbd5792d4ad840c4a",
+    "bytes": 121645,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-UA-uk-400-12c4ca8f507f.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "563265db0e513d854635280e2667c162f0fa01115052883c7a7b6036aa74f3be",
+    "bytes": 167840,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-UA-uk-800-3ba077220cc2.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "cec3ca4b14a696a342ee7344e1c2cb5d816cf58f302b0ba8d7a91740fe58b30d",
+    "bytes": 173308,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-VN-vi-0-c4a16ec7fa80.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "3c2727a75ef087d48480c7325cd8b8350f59180c8d1bba8b5736f39d78037f8a",
+    "bytes": 177927,
+    "retrieved": "2026-10-24"
+  },
+  "wikidata/given-labels-VN-vi-400-ec162669901e.json": {
+    "url": "https://query.wikidata.org/sparql (query in scripts/data)",
+    "sha256": "28a5761fafb3ed58ce4ad8aa9db27dc1097151fd4fea5bf5fbf2410cd101071c",
+    "bytes": 44253,
     "retrieved": "2026-10-24"
   }
 }

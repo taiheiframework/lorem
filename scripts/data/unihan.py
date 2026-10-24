@@ -58,14 +58,15 @@ def is_traditional(sentence):
     return any(c in t for c in sentence) and not any(c in s for c in sentence)
 
 
-def pinyin(chars):
-    """The pinyin of a family name, without tone marks, capitalised: 王 is Wang, 欧阳 Ouyang."""
-    if chars in SURNAME_READINGS:
+def pinyin(chars, surname=True):
+    """The pinyin of a family name (or with surname=False any name, by the most common readings),
+    without tone marks, capitalised: 王 is Wang, 欧阳 Ouyang."""
+    if surname and chars in SURNAME_READINGS:
         return SURNAME_READINGS[chars]
     readings = _fields("kMandarin")
     parts = []
     for c in chars:
-        if c in SURNAME_READINGS:
+        if surname and c in SURNAME_READINGS:
             parts.append(SURNAME_READINGS[c].lower())
             continue
         if c not in readings:

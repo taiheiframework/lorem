@@ -60,6 +60,13 @@ def _labels(kind, country, lang, ids):
     out = {}
     for r in sorted(rows, key=lambda r: (r["item"], r.get("label", ""), r.get("en", ""), r.get("kana", ""), r.get("female", ""), r.get("ws", ""))):
         r = dict(r, systems=systems.get(_qid(r["item"]), set()))
+        # Serbian labels on Wikidata are in either script: a Latin one is turned into Cyrillic.
+        if lang == "sr" and "label" in r and not any("\u0400" <= c <= "\u04ff" for c in r["label"]):
+            cyr = romanize.serbian_cyrillic(r["label"])
+            if cyr:
+                r["label"] = cyr
+            else:
+                del r["label"]
         # The native label (P1705) where the item has no label in the language.
         if "label" not in r and "native" in r:
             r["label"] = r["native"]
@@ -79,7 +86,10 @@ SCRIPT_ITEMS = {"Latn": {"Q8229"}, "Cyrl": {"Q8209"}, "Grek": {"Q8216"}, "Arab":
 # beside the Latin-script Elena), so that an item written in another script only is a
 # transcription. Elsewhere (Arabic, Japanese) a Latin-script item's label in the language is the
 # native name.
-STRICT_WRITING = {"ru", "uk", "bg", "sr-Cyrl", "el", "th"}
+STRICT_WRITING = {"ru", "uk", "bg", "el", "th", "he"}
+
+# Vietnamese middle names that Wikidata records as given names: Thị for women, Văn for men.
+NOT_GIVEN = {"vi": {"Thị", "Văn"}}
 
 # The letters each Cyrillic alphabet has: a Russian name with the Serbian Ј is no Russian name.
 CYRILLIC_LETTERS = {
@@ -108,6 +118,43 @@ def _name_ok(name, script, tag=None, systems=frozenset()):
 def _latin_ok(s):
     return bool(s) and all(c.isalpha() or c in " -'’" for c in s) and \
         all(ord(c) < 0x250 or 0x1E00 <= ord(c) <= 0x1EFF for c in s)
+
+
+# The Latin initials a name's first letter may have in a romanisation, for the scripts whose
+# latin form is an English label: a label whose initial does not fit belongs to another name.
+ARABIC_INITIALS = {
+    "ا": "AEIOU", "أ": "AEIOU", "إ": "EI", "آ": "A", "ع": "AEIOU", "ب": "B", "ت": "T", "ث": "TS",
+    "ج": "JGD", "ح": "H", "خ": "K", "د": "D", "ذ": "DZT", "ر": "R", "ز": "Z", "س": "S", "ش": "SC",
+    "ص": "S", "ض": "D", "ط": "T", "ظ": "ZD", "غ": "G", "ف": "F", "ق": "QKG", "ك": "K", "ل": "L",
+    "م": "M", "ن": "N", "ه": "H", "و": "WOU", "ي": "YIE",
+}
+THAI_INITIALS = {
+    "ก": "KG", "ข": "K", "ฃ": "K", "ค": "K", "ฅ": "K", "ฆ": "K", "ง": "N", "จ": "JC", "ฉ": "C",
+    "ช": "CS", "ซ": "S", "ฌ": "C", "ญ": "YN", "ฎ": "D", "ฏ": "T", "ฐ": "T", "ฑ": "TD", "ฒ": "T",
+    "ณ": "N", "ด": "D", "ต": "T", "ถ": "T", "ท": "T", "ธ": "T", "น": "N", "บ": "BP", "ป": "PB",
+    "ผ": "P", "ฝ": "F", "พ": "PB", "ฟ": "F", "ภ": "P", "ม": "M", "ย": "Y", "ร": "R", "ฤ": "R",
+    "ล": "L", "ฦ": "L", "ว": "WV", "ศ": "S", "ษ": "S", "ส": "S", "ห": "H", "ฬ": "L", "อ": "AEIOU",
+    "ฮ": "H",
+}
+THAI_LEADING_VOWELS = set("เแโใไ")
+
+
+def _initial_matches(tag, name, latin):
+    if not latin or not latin[0].isupper():
+        return False  # a nickname or a fault, such as "makarona"
+    if tag == "ar":
+        bare = name[2:] if name.startswith("ال") and len(name) > 2 else name
+        rest = latin[3:] if bare is not name and latin[:3].lower() in ("al-", "el-", "al ", "el ") else latin
+        rest = rest[2:] if bare is not name and rest[:2].lower() in ("al", "el") and rest is latin else rest
+        options = ARABIC_INITIALS.get(bare[:1])
+        return options is None or rest[:1].upper() in options
+    if tag == "th":
+        if " " in latin:
+            return False  # "Krairiksh family"
+        first = name.lstrip("".join(THAI_LEADING_VOWELS))[:1]
+        options = THAI_INITIALS.get(first)
+        return options is None or latin[0] in options
+    return True
 
 
 def _form(tag, script, name, en, kana, family_name=False):
@@ -142,8 +189,11 @@ def _form(tag, script, name, en, kana, family_name=False):
         if not _latin_ok(en):
             return None
         # An English label may carry a scholarly transcription (Faraḥ) or another language's
-        # letters (Hafız): the latin form is its plain Latin letters.
-        latin = romanize.ascii_fold(en)
+        # letters (Hafız): the latin form is its plain Latin letters, each part capitalised
+        # ("Al dawod" is Al Dawod).
+        latin = " ".join(p[:1].upper() + p[1:] for p in romanize.ascii_fold(en).split(" "))
+        if not _initial_matches(tag, name, latin):
+            return None  # a label of another name (غادة labelled Hamada)
     if latin != name:
         entry["latin"] = latin
     ascii_form = romanize.ascii_fold(latin)
@@ -172,6 +222,10 @@ def _native(kind, cls, lang):
     return [_qid(r["item"]) for r in rows]
 
 
+def entry_latin(en):
+    return romanize.ascii_fold(en).replace("-", "").replace(" ", "").capitalize() if en else None
+
+
 def given(tag, conf, limit=120):
     country, script, lang = conf["country"], conf["script"], conf["wikidata"]
     counts = _counts("given", country, "P735", True)
@@ -193,29 +247,46 @@ def given(tag, conf, limit=120):
         entry = _form(tag, script, name, r.get("en"), r.get("kana"))
         if not entry:
             continue
+        if tag in PATRONYMIC and name.endswith(PATRONYMIC[tag]):
+            continue  # a patronymic recorded as a given name, such as Сергеевна
+        if name in NOT_GIVEN.get(tag, set()):
+            continue
+        if script in ("Hans", "Hant") and unihan.pinyin(name, surname=False) != entry_latin(r.get("en")):
+            continue  # an English name in characters (辛迪, Cindy), whose label is no pinyin
         total = f + m
         for key, n in (("female", f), ("male", m)):
-            if n * 4 >= total and len(lists[key]) < limit and name not in {e["name"] for e in lists[key]}:
+            # On both lists only when at least a third of its bearers are of each gender:
+            # gender statements on Wikidata are not free of faults.
+            if n * 3 >= total and len(lists[key]) < limit and name not in {e["name"] for e in lists[key]}:
                 lists[key].append(dict(entry, weight=n))
     return lists
 
+
+PATRONYMIC = {t: ("вна", "вич", "чна", "ична") for t in ("ru", "uk", "bg", "sr-Cyrl")}
 
 FEMALE_RULES = {
     "ru": [("ский", "ская"), ("цкий", "цкая"), ("ой", "ая"), ("ов", "ова"), ("ев", "ева"), ("ёв", "ёва"), ("ин", "ина"), ("ын", "ына")],
     "bg": [("ски", "ска"), ("ов", "ова"), ("ев", "ева"), ("ин", "ина")],
     "uk": [("ський", "ська"), ("цький", "цька"), ("ов", "ова"), ("ев", "ева"), ("ін", "іна"), ("ин", "ина")],
     "pl": [("ski", "ska"), ("cki", "cka"), ("dzki", "dzka")],
-    "el": [("ος", "ου"), ("ης", "η"), ("ας", "α"), ("ός", "ού"), ("ής", "ή"), ("άς", "ά")],
+    # The stress of -όπουλος moves in the genitive the female form is: Παπαδοπούλου.
+    "el": [("όπουλος", "οπούλου"), ("ος", "ου"), ("ης", "η"), ("ας", "α"), ("ός", "ού"), ("ής", "ή"), ("άς", "ά")],
 }
 
 
 def _female(tag, name, wikidata_female):
-    if wikidata_female and wikidata_female != name:
-        return wikidata_female
+    """The female form by the language's rule (Жуков is Жукова), or Wikidata's where no rule
+    applies: its P2521 is sometimes another name (Жуковская)."""
     for male, female in FEMALE_RULES.get(tag, []):
         if name.endswith(male):
             return name[: -len(male)] + female
+    if wikidata_female and wikidata_female != name:
+        return wikidata_female
     return None
+
+
+def _is_female_form(tag, name):
+    return any(name.endswith(female) and len(name) > len(female) + 1 for _, female in FEMALE_RULES.get(tag, []))
 
 
 def family(tag, conf, limit=160):
@@ -233,6 +304,8 @@ def family(tag, conf, limit=160):
             continue
         if script in ("Hans", "Hant") and len(name) > 2:
             continue  # a transcribed foreign name
+        if _is_female_form(tag, name):
+            continue  # Петрова is the female form of Петров, not a family name of its own
         entry = _form(tag, script, name, r.get("en"), r.get("kana"), family_name=True)
         if not entry:
             continue

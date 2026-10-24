@@ -36,13 +36,18 @@ def lorem_words():
     return [[w, 1] for w in lines if w and not w.startswith("#")]
 
 
-# Wikidata names some Thai cities by their municipality ("city municipality of"), and lists
-# districts and provinces among them.
-CITY_PREFIXES = {"th": ["เทศบาลนคร", "เทศบาลเมือง"]}
-NOT_CITIES = {"th": ["เขต", "จังหวัด", "อำเภอ", "แขวง"]}
-# And some Japanese metropolitan areas and regions, which the settlement filter lets through, and
-# the prefecture of Tokyo besides the city.
-NOT_CITY_ENDINGS = {"ja": ["圏", "地域", "東京都"]}
+# Wikidata names some cities by their municipality ("city municipality of", "City of", "Free
+# Hanseatic City"), and lists districts, provinces, metropolitan areas and conurbations among
+# them, which the settlement filter lets through: the prefix goes, and the others are left out.
+CITY_PREFIXES = {
+    "th": ["เทศบาลนคร", "เทศบาลเมือง"],
+    "de": ["Kreisfreie Stadt ", "Freie und Hansestadt ", "Freie Hansestadt "],
+    "es": ["Ciudad de ", "ciudad de "],
+    "sr-Cyrl": ["Град "],
+}
+NOT_CITIES = {"th": ["เขต", "จังหวัด", "อำเภอ", "แขวง"], "sr-Cyrl": ["Општина "], "es": ["Barrio "]}
+NOT_CITY_ENDINGS = {"ja": ["圏", "地域", "東京都"], "zh-Hant": ["區"], "fr": [" Métropole"]}
+NOT_CITY_WORDS = ["Métropole", "Metropolitana", "Konurbacja", "Innenstadt", "Великий ", "Région", "Província"]
 
 
 def city_names(tag, cities):
@@ -52,6 +57,8 @@ def city_names(tag, cities):
         if any(name.startswith(p) for p in NOT_CITIES.get(tag, [])):
             continue
         if any(name.endswith(e) for e in NOT_CITY_ENDINGS.get(tag, [])):
+            continue
+        if any(w in name for w in NOT_CITY_WORDS) or (name[:1].isalpha() and name[:1].islower()):
             continue
         for p in CITY_PREFIXES.get(tag, []):
             if name.startswith(p) and len(name) > len(p):

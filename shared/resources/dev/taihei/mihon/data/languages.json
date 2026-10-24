@@ -1,12 +1,30 @@
 {
   "languages": [
     {"tag":"ar","script":"Arab","country":"EG"},
+    {"tag":"bg","script":"Cyrl","country":"BG"},
+    {"tag":"de","script":"Latn","country":"DE"},
+    {"tag":"el","script":"Grek","country":"GR"},
     {"tag":"en","script":"Latn","country":"US"},
+    {"tag":"es","script":"Latn","country":"ES"},
+    {"tag":"fr","script":"Latn","country":"FR"},
+    {"tag":"he","script":"Hebr","country":"IL"},
+    {"tag":"hi","script":"Deva","country":"IN"},
+    {"tag":"hu","script":"Latn","country":"HU"},
+    {"tag":"it","script":"Latn","country":"IT"},
     {"tag":"ja","script":"Jpan","country":"JP"},
+    {"tag":"ko","script":"Kore","country":"KR"},
     {"tag":"la","script":"Latn","country":"VA"},
+    {"tag":"nl","script":"Latn","country":"NL"},
+    {"tag":"pl","script":"Latn","country":"PL"},
+    {"tag":"pt","script":"Latn","country":"BR"},
     {"tag":"ru","script":"Cyrl","country":"RU"},
+    {"tag":"sr-Cyrl","script":"Cyrl","country":"RS"},
     {"tag":"th","script":"Thai","country":"TH"},
-    {"tag":"zh-Hans","script":"Hans","country":"CN"}
+    {"tag":"tr","script":"Latn","country":"TR"},
+    {"tag":"uk","script":"Cyrl","country":"UA"},
+    {"tag":"vi","script":"Latn","country":"VN"},
+    {"tag":"zh-Hans","script":"Hans","country":"CN"},
+    {"tag":"zh-Hant","script":"Hant","country":"TW"}
   ],
   "aliases": [
     ["sr","sr-Cyrl"],

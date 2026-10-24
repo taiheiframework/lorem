@@ -15,6 +15,10 @@ object LanguagesSpec extends ZIOSpecDefault:
   private val Cyrillic = Seq(0x400 -> 0x4ff)
   private val Arabic   = Seq(0x600 -> 0x6ff, 0x750 -> 0x77f)
   private val Thai     = Seq(0xe00 -> 0xe7f)
+  private val Greek    = Seq(0x370 -> 0x3ff, 0x1f00 -> 0x1fff)
+  private val Hebrew   = Seq(0x590 -> 0x5ff)
+  private val Deva     = Seq(0x900 -> 0x97f)
+  private val Hangul   = Seq(0x1100 -> 0x11ff, 0x3130 -> 0x318f, 0xac00 -> 0xd7af)
   // Han ideographs, with the iteration mark 々 that Japanese names use.
   private val Han      = Seq(0x3005 -> 0x3007, 0x3400 -> 0x4dbf, 0x4e00 -> 0x9fff, 0xf900 -> 0xfaff, 0x20000 -> 0x3134f)
   private val Kana     = Seq(0x3040 -> 0x309f, 0x30a0 -> 0x30ff)
@@ -46,6 +50,119 @@ object LanguagesSpec extends ZIOSpecDefault:
   private val conventions: Map[String, Conventions] = Map(
     "en" -> latin("US", "[0-9]{5}", "\\+1 [2-9][0-9]{2} 555-01[0-9]{2}", Set("“", "”")),
     "la" -> latin("VA", "00120", "\\+39 06 698[0-9]{5}", Set("“", "”")),
+    "nl" -> latin("NL", "[1-9][0-9]{3} [A-Z]{2}", "\\+31 6 [0-9]{8}", Set("‘", "’")),
+    "fr" -> {
+      val marks = Set(".", ",", "\u202f?", "\u202f!", "«\u202f", "\u202f»")
+      Conventions(
+        Latin,
+        marks,
+        marks,
+        true,
+        false,
+        " ",
+        "FR",
+        "[1-9][0-9]{4}",
+        "\\+33 [1-9] [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}",
+      )
+    },
+    "de" -> latin("DE", "[0-9]{5}", "\\+49 17[0-9] [0-9]{7}", Set("„", "“")),
+    "es" -> {
+      val marks = west ++ Set("¿", "¡", "“", "”")
+      Conventions(
+        Latin,
+        marks,
+        marks,
+        true,
+        false,
+        " ",
+        "ES",
+        "[1-9][0-9]{4}",
+        "\\+34 6[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}",
+      )
+    },
+    "it" -> latin("IT", "[0-9]{5}", "\\+39 3[0-9]{2} [0-9]{3} [0-9]{4}", Set("«", "»")),
+    "pt" -> latin("BR", "[0-9]{5}-[0-9]{3}", "\\+55 [1-9][0-9] 9[0-9]{4}-[0-9]{4}", Set("“", "”")),
+    "pl" -> latin("PL", "[0-9]{2}-[0-9]{3}", "\\+48 [1-9][0-9]{2} [0-9]{3} [0-9]{3}", Set("„", "”")),
+    "tr" -> latin("TR", "[1-9][0-9]{4}", "\\+90 5[0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}", Set("“", "”")),
+    "vi" -> latin("VN", "[1-9][0-9]{5}", "\\+84 9[0-9] [0-9]{3} [0-9]{2} [0-9]{2}", Set("“", "”"), familyFirst = true),
+    "hu" -> latin("HU", "[1-9][0-9]{3}", "\\+36 [1-9]0 [0-9]{3} [0-9]{4}", Set("„", "”"), familyFirst = true),
+    "uk" -> Conventions(
+      Cyrillic,
+      west ++ Set("«", "»", "’"),
+      west ++ Set("«", "»"),
+      true,
+      false,
+      " ",
+      "UA",
+      "[0-9]{5}",
+      "\\+380 9[0-9] [0-9]{3} [0-9]{2} [0-9]{2}",
+    ),
+    "bg" -> Conventions(
+      Cyrillic,
+      west ++ Set("„", "“"),
+      west ++ Set("„", "“"),
+      true,
+      false,
+      " ",
+      "BG",
+      "[1-9][0-9]{3}",
+      "\\+359 8[0-9] [0-9]{3} [0-9]{4}",
+    ),
+    "sr-Cyrl" -> Conventions(
+      Cyrillic,
+      west ++ Set("„", "”"),
+      west ++ Set("„", "”"),
+      true,
+      false,
+      " ",
+      "RS",
+      "[1-9][0-9]{4}",
+      "\\+381 6[0-9] [0-9]{3} [0-9]{4}",
+    ),
+    "el" -> {
+      val marks = Set(".", ";", "!", ",", "«", "»")
+      Conventions(
+        Greek,
+        marks,
+        marks,
+        true,
+        false,
+        " ",
+        "GR",
+        "[1-9][0-9]{2} [0-9]{2}",
+        "\\+30 69[0-9] [0-9]{3} [0-9]{4}",
+      )
+    },
+    "he" -> Conventions(
+      Hebrew,
+      west + "”",
+      west + "”",
+      true,
+      false,
+      " ",
+      "IL",
+      "[0-9]{7}",
+      "\\+972 5[0-9]-[0-9]{3}-[0-9]{4}",
+    ),
+    "hi" -> {
+      val marks = Set("।", "?", "!", ",", "“", "”")
+      Conventions(Deva, marks, marks, true, false, " ", "IN", "[1-9][0-9]{5}", "\\+91 9[0-9]{4} [0-9]{5}")
+    },
+    "zh-Hant" -> {
+      val marks = Set("。", "？", "！", "，", "「", "」")
+      Conventions(Han, marks, marks, false, true, "", "TW", "[1-9][0-9]{2}", "\\+886 9[0-9]{2} [0-9]{3} [0-9]{3}")
+    },
+    "ko" -> Conventions(
+      Hangul,
+      west ++ Set("“", "”"),
+      west ++ Set("“", "”"),
+      true,
+      true,
+      "",
+      "KR",
+      "[0-9]{5}",
+      "\\+82 10-[0-9]{4}-[0-9]{4}",
+    ),
     "ru" -> Conventions(
       Cyrillic,
       west ++ Set("«", "»"),
@@ -165,6 +282,10 @@ object LanguagesSpec extends ZIOSpecDefault:
         Mihon.resolve(Language("en-u-ca-gregory")) == Some(Language.English),
         Mihon.resolve(Language("ja-JP")) == Some(Language("ja")),
         Mihon.resolve(Language("ru-UA")) == Some(Language("ru")),
+        Mihon.resolve(Language("nl-BE")) == Some(Language("nl")),
+        Mihon.resolve(Language("pt-PT")) == Some(Language("pt")),
+        Mihon.resolve(Language("sr")) == Some(Language("sr-Cyrl")),
+        Mihon.resolve(Language("sr-RS")) == Some(Language("sr-Cyrl")),
       )
     },
     test("Chinese is found by its aliases and by its script") {
@@ -201,6 +322,9 @@ object LanguagesSpec extends ZIOSpecDefault:
         Mihon.resolve(Language("en-Cyrl")).isEmpty,
         Mihon.resolve(Language("ru-Latn")).isEmpty,
         Mihon.resolve(Language("ja-Latn")).isEmpty,
+        Mihon.resolve(Language("sr-Latn")).isEmpty,
+        Mihon.resolve(Language("zh-Hant-CN")) == Some(Language("zh-Hant")),
+        Mihon.resolve(Language("zh-Hans-TW")) == Some(Language("zh-Hans")),
       )
     },
     test("English is the default and never refused") {

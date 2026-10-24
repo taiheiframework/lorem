@@ -355,15 +355,20 @@ object EmbeddedData {
     }
     val tags = entries.map(_.tag)
     if (tags.distinct.size != tags.size) fail(file, "a language listed twice")
-    arr(file, root("aliases"), "aliases", nonEmpty = false).zipWithIndex.foreach { case (v, i) =>
+    val aliases = arr(file, root("aliases"), "aliases", nonEmpty = false).zipWithIndex.map { case (v, i) =>
       val (a, t) = pair(file, v, s"aliases[$i]")
       val alias  = str(file, a, s"aliases[$i]", nonEmpty = true)
       if (!alias.matches("[a-z]{2,3}(-[A-Z][a-z]{3})?(-[A-Z]{2})?")) fail(file, s"aliases[$i]: not a tag: $alias")
+      // Resolution looks an alias up before a language, so an alias equal to a language's tag
+      // would hide that language's data.
+      if (tags.contains(alias)) fail(file, s"aliases[$i]: $alias is a language's own tag")
       // An alias may name a language without data yet: resolution then refuses it, rather than
       // serve the alias by its base tag.
       if (!str(file, t, s"aliases[$i] target").matches("[a-z]{2,3}(-[A-Z][a-z]{3})?"))
         fail(file, s"aliases[$i]: the target is not a language with an optional script")
+      alias
     }
+    if (aliases.distinct.size != aliases.size) fail(file, "an alias listed twice")
     entries
   }
 
