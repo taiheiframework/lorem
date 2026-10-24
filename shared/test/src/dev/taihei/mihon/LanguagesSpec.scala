@@ -323,6 +323,7 @@ object LanguagesSpec extends ZIOSpecDefault:
         Mihon.resolve(Language("ru-Latn")).isEmpty,
         Mihon.resolve(Language("ja-Latn")).isEmpty,
         Mihon.resolve(Language("sr-Latn")).isEmpty,
+        Mihon.resolve(Language("sr-Latn-RS")).isEmpty,
         Mihon.resolve(Language("zh-Hant-CN")) == Some(Language("zh-Hant")),
         Mihon.resolve(Language("zh-Hans-TW")) == Some(Language("zh-Hans")),
       )
