@@ -313,7 +313,11 @@ cat > "$G/mill" <<EOF
 case "\$*" in
   shutdown) exit 0;;
   "resolve __.publishArtifacts") printf '%s\n' $PUBLISHED;;
-  "--no-daemon show release.gitVersion") echo '"$V"';;
+  "--no-daemon show release.gitVersion")
+    for v in MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD; do
+      if [ -n "\${!v+x}" ]; then echo "show \$v set"; else echo "show \$v unset"; fi
+    done > "$MLOG.show"
+    echo '"$V"';;
   "--no-daemon mill.javalib.SonatypeCentralPublishModule/"*)
     for v in MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD MILL_PGP_SECRET_BASE64 MILL_PGP_PASSPHRASE MILL_TESTS_PUBLISH_DRY_RUN; do
       if [ "\${!v-}" = dry-run-no-upload ]; then echo "\$v placeholder"
@@ -334,7 +338,8 @@ ARGS="args --no-daemon mill.javalib.SonatypeCentralPublishModule/ --bundleName $
 rm -f "$MLOG"
 expect "publish-dry-run runs with the release env" 0 "bundle in" "${M[@]}" publish-dry-run "RELEASE_ENV=$W/release.env"
 saw "MILL_SONATYPE_USERNAME placeholder" && saw "MILL_SONATYPE_PASSWORD placeholder" \
-  && pass "publish-dry-run: Mill gets a placeholder, never the Central token from the release env" || fail "publish-dry-run: Mill saw the Central token, or no placeholder"
+  && grep -qxF "show MILL_SONATYPE_USERNAME unset" "$MLOG.show" && grep -qxF "show MILL_SONATYPE_PASSWORD unset" "$MLOG.show" \
+  && pass "publish-dry-run: Mill gets a placeholder, never the Central token from the release env" || fail "publish-dry-run: a Mill saw the Central token, or no placeholder"
 saw "MILL_PGP_SECRET_BASE64 set" && saw "MILL_PGP_PASSPHRASE set" && saw "MILL_TESTS_PUBLISH_DRY_RUN set" \
   && pass "publish-dry-run: Mill gets the release key and the dry-run switch" || fail "publish-dry-run: Mill lacks the key or the switch"
 saw "$ARGS" && pass "publish-dry-run: Mill gets the bundle name and no other argument" || fail "publish-dry-run: Mill's arguments: $(grep '^args' "$MLOG")"
