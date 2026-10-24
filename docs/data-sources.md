@@ -93,8 +93,11 @@ the reservation is cited here; elsewhere a number may be real.
   diacritics) is one entry with both weights. Dutch writes the particles of a family name in lower
   case (de Vries). A few names are corrected or left out by hand in `scripts/data/wikinames.py`:
   an Arabic nickname, Maria and Marie as a man's name in seven Latin-script languages (on their own
-  they are the second half of Jean-Marie or Jan Maria), and the Arabic latin forms Zainab and
-  Suleiman where the English label has Zeynep and Solomon.
+  they are the second half of Jean-Marie or Jan Maria), the Arabic latin forms Zainab and
+  Suleiman where the English label has Zeynep and Solomon, Hindi labels that translate an English
+  name instead of naming (समानता, "equality", for Samantha) or hold more than a name, the latin
+  form Mohit, and European names written in Devanagari. Arabic names use the Arabic ي where a
+  label has the Persian ی.
 - **Romanisation.** The `latin` form is computed by rule where one exists: ICAO 9303 for Russian
   (with the national variants for Ukrainian, Bulgarian and Serbian), ELOT 743 for Greek, Hepburn
   as Japanese passports write it (no macrons, no apostrophe), pinyin without tone marks for
