@@ -57,7 +57,8 @@ NOT_CITY_WORDS = ["métropole", "metropolitana", "metropolitano", "konurbacja", 
 # Districts of a city and provinces that Wikidata classes as settlements, by name (written for
 # this library from the merge gate's reading), and one item Wikidata places in the wrong country.
 NOT_CITY_NAMES = {
-    "es": {"Chamartín"},
+    "es": {"Chamartín", "San Andrés de Palomar", "Cartagena Casco", "Arroyo de la Miel",
+           "Torrente"},  # Torrente is Torrent, under its Spanish name
     "el": {"Πίσα"},
     "vi": {"Kiên Giang", "Ninh Thuận", "Nam Từ Liêm", "Cẩm Lệ", "Bắc Từ Liêm", "Hoàng Mai", "Long Biên"},
     "tr": {"Şahinbey", "Çankaya", "Keçiören", "Osmangazi", "Seyhan", "Selçuklu", "Mamak", "Etimesgut",

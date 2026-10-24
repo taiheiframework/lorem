@@ -11,7 +11,7 @@
     {"name":"ريم","latin":"Reem","weight":17},
     {"name":"ليلى","latin":"Laila","weight":21},
     {"name":"فريدة","latin":"Farida","weight":16},
-    {"name":"مريم","latin":"Mariam","weight":20},
+    {"name":"مريم","latin":"Mariam","weight":24},
     {"name":"سحر","latin":"Sahar","weight":15},
     {"name":"مها","latin":"Maha","weight":14},
     {"name":"سلمى","latin":"Salma","weight":15},
@@ -88,7 +88,6 @@
     {"name":"بسمة","latin":"Baasma","weight":7},
     {"name":"عزة","latin":"Izza","weight":4},
     {"name":"فايزة","latin":"Fayza","weight":4},
-    {"name":"مریم","latin":"Maryam","weight":4},
     {"name":"رندة","latin":"Randa","weight":3},
     {"name":"جميلة","latin":"Jamila","weight":3},
     {"name":"نجلاء","latin":"Naglaa","weight":5},
@@ -121,7 +120,8 @@
     {"name":"نهاد","latin":"Nihad","weight":5},
     {"name":"سناء","latin":"Sanae","weight":3},
     {"name":"مايا","latin":"Maya","weight":3},
-    {"name":"زينة","latin":"Zeina","weight":2}
+    {"name":"زينة","latin":"Zeina","weight":2},
+    {"name":"هيا","latin":"Haya","weight":2}
   ],
   "male": [
     {"name":"محمد","latin":"Muhammad","weight":834},
@@ -148,7 +148,7 @@
     {"name":"نبيل","latin":"Nabil","weight":29},
     {"name":"خالد","latin":"Khaled","weight":26},
     {"name":"مجدي","latin":"Magdi","weight":26},
-    {"name":"سعيد","latin":"Saeed","weight":30},
+    {"name":"سعيد","latin":"Saeed","weight":31},
     {"name":"أيمن","latin":"Ayman","weight":30},
     {"name":"هشام","latin":"Hisham","weight":32},
     {"name":"تامر","latin":"Tamer","weight":23},

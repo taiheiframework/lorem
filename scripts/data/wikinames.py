@@ -101,20 +101,29 @@ SCRIPT_ITEMS = {"Latn": {"Q8229"}, "Cyrl": {"Q8209"}, "Grek": {"Q8216"}, "Arab":
 # native name.
 STRICT_WRITING = {"ru", "uk", "bg", "el", "th", "he"}
 
-# English given names written in another script (जॉन, John), which Wikidata counts for people of
-# India but which are no Hindi names; left out by their English label.
+# English and other European names written in another script (जॉन, John), which Wikidata counts
+# for people of India but which are no Hindi names; left out by their English label.
 ENGLISH_NAMES = {"John", "Mary", "Paul", "Michael", "Peter", "David", "James", "George", "Thomas",
-                 "William", "Robert", "Richard", "Joseph", "Charles", "Elizabeth", "Anne", "Margaret"}
+                 "William", "Robert", "Richard", "Joseph", "Charles", "Elizabeth", "Anne", "Margaret",
+                 "Jennifer", "Daniel", "Mark", "Hans", "Francisco", "Oliver", "Edward", "Leonard",
+                 "Arthur", "Martin", "Pavel", "Taylor", "Barry", "Carlos", "Tito"}
 FOREIGN_NAMES_LEFT_OUT = {"hi"}
 
 # Names that Wikidata records as given names but that are none: the Vietnamese middle names Thị
-# and Văn, and a nickname ("macaroni"). By list: Maria or Marie as a man's name is the second
-# half of Jean-Marie or Jan Maria.
-NOT_GIVEN = {"vi": {"Thị", "Văn"}, "ar": {"مكرونه", "مكرونة"}}
+# and Văn, a nickname ("macaroni"), Hindi labels that translate an English label instead of
+# naming (समानता "equality" for Samantha, हवा "air" for Pawan), and Hindi labels that hold more
+# than a name (an honorific, a family name, an epithet, "the Telugu language"). By list: Maria or
+# Marie as a man's name is the second half of Jean-Marie or Jan Maria, and ललिता is a woman's name.
+NOT_GIVEN = {"vi": {"Thị", "Văn"}, "ar": {"مكرونه", "مكرونة"},
+             "hi": {"समानता", "संतुष्टि", "हवा", "मोहिनी अवतार", "श्री गायत्री देवी", "सुयश दास", "तेलुगु भाषा"}}
 NOT_GIVEN_BY_GENDER = {(t, "male"): {"Maria", "Marie", "María"} for t in ("fr", "nl", "it", "pl", "de", "es", "pt")}
+NOT_GIVEN_BY_GENDER[("hi", "male")] = {"ललिता"}
+
+# Hindi labels of family-name items that are words, not names: बहन "sister", पति "husband".
+NOT_FAMILY = {"hi": {"बहन", "पति"}}
 
 # English labels that give an Arabic name in another language's or a Biblical form.
-LATIN_FIXES = {"ar": {"زينب": "Zainab", "سليمان": "Suleiman"}}
+LATIN_FIXES = {"ar": {"زينب": "Zainab", "سليمان": "Suleiman"}, "hi": {"मोहित": "Mohit"}}
 
 # Dutch writes the particles of a family name in lower case after a given name: Jan de Vries.
 DUTCH_PARTICLES = ("Van der ", "Van den ", "Van de ", "Van ", "De ", "Den ", "Ter ", "Ten ", "Het ", "'T ")
@@ -122,9 +131,11 @@ DUTCH_PARTICLES = ("Van der ", "Van den ", "Van de ", "Van ", "De ", "Den ", "Te
 
 def _native_form(tag, name):
     """The name as the data keeps it: Arabic without vowel marks or tatweel, so that مُصطفى and
-    مصطفى are one name; Dutch particles in lower case."""
+    مصطفى are one name, and with the Arabic ي for the Persian ی (مریم is مريم); Dutch particles in
+    lower case."""
     if tag == "ar":
         name = "".join(c for c in name if not unicodedata.combining(c) and c != "\u0640")
+        name = name.replace("\u06cc", "\u064a")
     if tag == "nl":
         for p in DUTCH_PARTICLES:
             if name.startswith(p):
@@ -375,6 +386,8 @@ def family(tag, conf, limit=160):
         if _is_female_form(tag, name):
             continue  # Петрова is the female form of Петров, not a family name of its own
         if tag in FOREIGN_NAMES_LEFT_OUT and r.get("en") in ENGLISH_NAMES:
+            continue
+        if name in NOT_FAMILY.get(tag, set()):
             continue
         entry = _form(tag, script, name, r.get("en"), r.get("kana"), family_name=True)
         if not entry:

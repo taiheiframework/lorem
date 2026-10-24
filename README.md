@@ -162,9 +162,9 @@ The same seed in several scripts:
 Mihon.seeded(1L, Language("ja")).person      // 田中さちこ, latin "Tanaka Sachiko", reading タナカ サチコ
 Mihon.seeded(1L, Language("ru")).person      // Людмила Фомина, latin "Liudmila Fomina"
 Mihon.seeded(1L, Language("el")).person      // Βασιλική Κοκολάκη, latin "Vasiliki Kokolaki"
-Mihon.seeded(1L, Language("ar")).person      // نادية إبراهيم, latin "Nadia Ibrahim"
+Mihon.seeded(1L, Language("ar")).person      // ناديا إبراهيم, latin "Nadiyah Ibrahim"
 Mihon.seeded(1L, Language("he")).person      // מירב לנקרי, latin "Meirav Lankri"
-Mihon.seeded(1L, Language("hi")).person      // प्रार्थना भारद्वाज, latin "Prarthana Bharadwaj"
+Mihon.seeded(1L, Language("hi")).person      // कल्पना चटर्जी, latin "Kalpana Chatterjee"
 Mihon.seeded(1L, Language("zh-Hans")).person // 彭薇, latin "Peng Wei"
 Mihon.seeded(1L, Language("ko")).person      // 장소희, latin "Jang So-hui"
 Mihon.seeded(1L, Language("ru")).sentence    // "Люди провёл хотели отец нужна пить знакомы себя со игры."
