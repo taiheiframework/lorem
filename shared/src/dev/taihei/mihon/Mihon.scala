@@ -437,10 +437,11 @@ object Mihon:
 
   /**
    * The language a factory would use for `language`, or `None` when Mihon has none for it. The tag
-   * is looked up as it is, then as an alias (`zh`, `zh-CN` and `zh-SG` are `zh-Hans`), then with
-   * subtags stripped from the right (`en-GB` is `en`, `ja-JP` is `ja`). A tag that names another
-   * script than the one found is refused (`ru-Latn`). An alias decides: `zh-TW` is refused until
-   * Traditional Chinese has data, never served by `zh-Hans`. A later minor release may serve a
+   * is looked up as it is, then as an alias (`zh`, `zh-CN` and `zh-SG` are `zh-Hans`; `zh-TW`,
+   * `zh-HK` and `zh-MO` are `zh-Hant`; `sr` and `sr-RS` are `sr-Cyrl`), then with subtags stripped
+   * from the right (`en-GB` is `en`, `ja-JP` is `ja`). A tag that names another
+   * script than the one found is refused (`ru-Latn`). An alias decides: `zh-TW` is served by
+   * `zh-Hant`, never by `zh-Hans` through `zh`. A later minor release may serve a
    * tag that is refused today, or serve it by a closer language (`nl-BE` once it has its own
    * data). Pin the version to rely on `language`. Code with input from outside asks first:
    *
