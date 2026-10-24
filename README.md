@@ -95,8 +95,9 @@ make command line points elsewhere, and the file must be yours, mode 600, not a
 link) or the environment (`MILL_SONATYPE_USERNAME`,
 `MILL_SONATYPE_PASSWORD`, `MILL_PGP_SECRET_BASE64`, `MILL_PGP_PASSPHRASE`).
 The dry run that builds the release bundle gets the release key but never the
-Central token. The `mill` launcher downloads Mill over HTTPS only and runs it
-only when its SHA-256 matches the one pinned in the launcher.
+Central token. The `mill` launcher downloads Mill over HTTPS only and keeps a
+download only when its SHA-256 matches the one pinned in the launcher; a copy
+already in Mill's cache is not checked again.
 The upload to GitHub Packages reads a `write:packages` token from
 `~/.taihei-packages-publish.env` alone, and the read-back a `read:packages`
 token from Coursier's credentials file (host `maven.pkg.github.com`); neither

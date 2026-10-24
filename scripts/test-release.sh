@@ -304,7 +304,9 @@ expect "embargo-lift refuses a version that is not under embargo" 1 "not under e
 
 # --- the targets that start Mill, against a stand-in ----------------------------------------
 # The stand-in answers the guards, and for the publishing command records which credential
-# variables reached it: their names, never their values.
+# variables reached it (their names, never their values), its arguments, and whether the Central
+# marker was there when it started. Mill 1.3.1 signs in its own JVM; only an added --useGpgCli
+# would hand the passphrase to a gpg command line, so the arguments must be exactly these.
 MLOG="$W/mill-env"
 cat > "$G/mill" <<EOF
 #!/usr/bin/env bash
@@ -315,7 +317,9 @@ case "\$*" in
   "--no-daemon mill.javalib.SonatypeCentralPublishModule/"*)
     for v in MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD MILL_PGP_SECRET_BASE64 MILL_PGP_PASSPHRASE MILL_TESTS_PUBLISH_DRY_RUN; do
       if [ -n "\${!v+x}" ]; then echo "\$v set"; else echo "\$v unset"; fi
-    done > "$MLOG";;
+    done > "$MLOG"
+    echo "args \$*" >> "$MLOG"
+    if [ -e "$B.CENTRAL_UPLOAD_STARTED" ]; then echo "marker before mill" >> "$MLOG"; fi;;
   *) echo "stand-in mill: unexpected \$*" >&2; exit 1;;
 esac
 EOF
@@ -324,6 +328,7 @@ chmod +x "$G/mill"
   printf "export MILL_SONATYPE_USERNAME='test-central-user'\nexport MILL_SONATYPE_PASSWORD='test-central-token'\n" > "$W/release.env"
   printf "export MILL_PGP_SECRET_BASE64='dGVzdA=='\nexport MILL_PGP_PASSPHRASE='test'\n" >> "$W/release.env" )
 saw() { grep -qxF "$1" "$MLOG" 2>/dev/null; }
+ARGS="args --no-daemon mill.javalib.SonatypeCentralPublishModule/ --bundleName $PREFIX-$V"
 
 rm -f "$MLOG"
 expect "publish-dry-run runs with the release env" 0 "bundle in" "${M[@]}" publish-dry-run "RELEASE_ENV=$W/release.env"
@@ -331,6 +336,7 @@ saw "MILL_SONATYPE_USERNAME unset" && saw "MILL_SONATYPE_PASSWORD unset" \
   && pass "publish-dry-run: the Central token from the release env never reaches Mill" || fail "publish-dry-run: Mill saw the Central token"
 saw "MILL_PGP_SECRET_BASE64 set" && saw "MILL_PGP_PASSPHRASE set" && saw "MILL_TESTS_PUBLISH_DRY_RUN set" \
   && pass "publish-dry-run: Mill gets the release key and the dry-run switch" || fail "publish-dry-run: Mill lacks the key or the switch"
+saw "$ARGS" && pass "publish-dry-run: Mill gets the bundle name and no other argument" || fail "publish-dry-run: Mill's arguments: $(grep '^args' "$MLOG")"
 rm -f "$MLOG"
 MILL_SONATYPE_USERNAME=env-user MILL_SONATYPE_PASSWORD=env-token "${M[@]}" publish-dry-run >/dev/null 2>&1
 saw "MILL_SONATYPE_USERNAME unset" && saw "MILL_SONATYPE_PASSWORD unset" \
@@ -353,7 +359,9 @@ saw "MILL_PGP_SECRET_BASE64 unset" \
 git -C "$G" -c user.name=Test -c user.email=test@example.invalid -c tag.gpgsign=false tag -a "v$V" -m test
 rm -rf "$W/served/taiheiframework"; echo "$V" > "$G/.release-embargo"; rm -f "$MLOG"
 expect "publish uploads an embargoed version to Central" 0 "to Maven Central" "${M[@]}" publish "RELEASE_ENV=$W/release.env"
-[ -s "$B.CENTRAL_UPLOAD_STARTED" ] && pass "publish marked the Central upload" || fail "publish left no marker"
+[ -s "$B.CENTRAL_UPLOAD_STARTED" ] && saw "marker before mill" \
+  && pass "publish marked the Central upload before Mill started" || fail "publish did not mark the Central upload before Mill"
+saw "$ARGS" && pass "publish: Mill gets the bundle name and no other argument" || fail "publish: Mill's arguments: $(grep '^args' "$MLOG")"
 saw "MILL_SONATYPE_USERNAME set" && saw "MILL_TESTS_PUBLISH_DRY_RUN unset" \
   && pass "publish gives Mill the Central token, and no dry-run switch" || fail "publish: Mill's environment"
 rm -f "$MLOG"

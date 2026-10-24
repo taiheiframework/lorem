@@ -318,7 +318,8 @@ publish:
 	if git ls-files --error-unmatch "$(EMBARGO_FILE)" >/dev/null 2>&1; then echo "[publish] refused: $(EMBARGO_FILE) is tracked"; exit 1; fi; \
 	if [ -e "$$B.CENTRAL_UPLOAD_STARTED" ] || [ -L "$$B.CENTRAL_UPLOAD_STARTED" ]; then \
 	  echo "[publish] refused: the upload of $$VERSION to Maven Central started before ($$(cat "$$B.CENTRAL_UPLOAD_STARTED" 2>/dev/null)), and it is never started again."; \
-	  echo "          Check the Central Portal's deployments and https://repo1.maven.org/maven2/$(firstword $(CENTRAL_PATHS))/$$VERSION/"; exit 1; fi; \
+	  echo "          Check the Central Portal's deployments and https://repo1.maven.org/maven2/$(firstword $(CENTRAL_PATHS))/$$VERSION/;"; \
+	  echo "          the CTO and the CISO decide what follows, normally the next patch version."; exit 1; fi; \
 	if [ -L "$(EMBARGO_FILE)" ] || ! [ -f "$(EMBARGO_FILE)" ] || ! grep -qxF "$$VERSION" "$(EMBARGO_FILE)"; then \
 	  echo "[publish] refused: $$VERSION is not under embargo. A release goes to GitHub Packages with release-finalize,"; \
 	  echo "          and to Maven Central with the release train, as the same signed files."; exit 1; fi; \
