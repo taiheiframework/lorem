@@ -53,7 +53,7 @@ make compile        # ./mill __.compile           (JVM + JS)
 make test           # ./mill __.test.testForked    (JVM + JS; JS runs on Node)
 make fmt            # ./mill __.reformat
 make fix            # ./mill __.fix                 (scalafix)
-make validate       # repo-guard + fix + fmt + compile + test + mima + budget
+make validate       # repo-guard + release-test + data-check-test + fix + fmt + compile + test + mima + budget
 make budget         # the size budget of the data, the JVM jar and the Scala.js output
 make mima           # binary compatibility with the newest release tag
 make publishLocal   # to ~/.ivy2/local (a SNAPSHOT only)

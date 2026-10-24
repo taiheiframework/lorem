@@ -8,7 +8,7 @@ from the parent folder's `CLAUDE.md` when this repo is checked out under `~/Proj
 ## Commands
 
 ```bash
-make validate          # repo-guard, scalafix, scalafmt, compile, test, MiMa and budget, JVM and JS
+make validate          # repo-guard, release and data-check tests, scalafix, scalafmt, compile, test, MiMa and budget, JVM and JS
 make budget            # size budget: data per language and in all, JVM jar, Scala.js fixture
 make repo-guard        # Maven Central only: no other repository, every dev.taihei pin on Central
 make mima              # binary compatibility with the newest 5.x release tag on Maven Central

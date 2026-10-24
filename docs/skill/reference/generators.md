@@ -35,7 +35,7 @@ Both factories and `withLanguage` throw `IllegalArgumentException` for a languag
 | `paragraphs: String` | one to four paragraphs |
 | `htmlParagraphs: String` | one to four paragraphs wrapped in `<p>…</p>` |
 | `title: String` | one to five words; every word capitalised in English, the first only elsewhere |
-| `slug: String` | two to eleven words joined by `/`, in the language's script |
+| `slug: String` | one to ten words joined by `/`, with one more word appended to the last without a slash (so at most nine slashes), in the language's script |
 
 ## People
 
