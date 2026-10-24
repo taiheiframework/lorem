@@ -280,8 +280,14 @@ object EmbeddedData {
 
   private def str(file: os.Path, v: ujson.Value, where: String, nonEmpty: Boolean = false): String = v match {
     case ujson.Str(s) if !nonEmpty || s.nonEmpty =>
-      // No control characters, no unpaired surrogates and no byte order marks in the data.
-      if (s.exists(c => c < ' ' || c == '\u007f' || c == '﻿')) fail(file, s"$where: a control character")
+      // No control characters, no unpaired surrogates and no byte order marks in the data, and no
+      // invisible character that reorders or hides text in a UI (bidi controls, zero-width
+      // characters, C1 controls, line and paragraph separators): a label from Wikidata, which
+      // anyone may edit, could carry one past a review of the diff.
+      if (s.exists(c => c < ' ' || c == '\u007f' || c == '\ufeff')) fail(file, s"$where: a control character")
+      if (s.exists(c => (c >= '\u0080' && c <= '\u009f') || c == '\u2028' || c == '\u2029' ||
+          Character.getType(c) == Character.FORMAT))
+        fail(file, s"$where: an invisible formatting character")
       s.indices.foreach { i =>
         val c = s(i)
         if (Character.isHighSurrogate(c) && (i + 1 >= s.length || !Character.isLowSurrogate(s(i + 1))))

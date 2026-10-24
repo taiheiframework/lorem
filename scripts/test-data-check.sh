@@ -43,6 +43,8 @@ refuses "weights beyond Int.MaxValue" "add up beyond" edit en/text.json "d['word
 refuses "more than 2000 words" "at most 2000" edit en/text.json "d['words'] = [['w%d' % i, 1] for i in range(2001)]"
 refuses "an initial without its capital" "no capital for the initial" edit en/text.json "d['capitals'] = [c for c in d['capitals'] if c[0] != 't']"
 refuses "a control character" "a control character" edit en/names.json "d['male'][0]['name'] = 'A\u0007'"
+refuses "a name with a bidi override" "an invisible formatting character" edit en/names.json "d['male'][0]['name'] = 'Ja\u202emes'"
+refuses "a city with a zero-width space" "an invisible formatting character" edit en/country-US.json "d['cities'][0]['name'] = 'New\u200bYork'"
 refuses "a name without an ASCII form" "no ASCII form" edit en/names.json "d['male'][0]['name'] = 'Zoë'"
 refuses "an unknown street placeholder" "unknown placeholders" edit en/country-US.json "d['streets'][0] = '{secret}'"
 refuses "an unknown address field" "unknown placeholders" edit en/country-US.json "d['lines'][0] = '{password}'"
