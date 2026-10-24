@@ -188,6 +188,13 @@ CENTRAL_GUARD = CODE=$$(curl -q -s --proto '=https' --max-time 30 -o /dev/null -
 		*) echo "[ERROR] cannot tell whether $$VERSION is on Maven Central (HTTP $$CODE)"; exit 1;; \
 	esac
 
+# Needs B, from TAG_VERSION. make publish signed this version for Maven Central and started its
+# upload there: a second signing here would put other signature bytes on GitHub Packages than
+# Central may serve, so the version reaches GitHub Packages from Central's own files instead.
+CENTRAL_STARTED_GUARD = if [ -e "$$B.CENTRAL_UPLOAD_STARTED" ] || [ -L "$$B.CENTRAL_UPLOAD_STARTED" ]; then \
+		echo "[ERROR] $$VERSION was signed for Maven Central and its upload there started ($$(cat "$$B.CENTRAL_UPLOAD_STARTED" 2>/dev/null)):"; \
+		echo "        it is never signed again here; it reaches GitHub Packages as Central's own files"; exit 1; fi
+
 # Needs RUSER and RTOKEN. The HTTP status of a GET of $$URL, without following a redirect.
 GITHUB_STATUS = { printf 'user = "%s:%s"\n' "$$RUSER" "$$RTOKEN" | \
 	curl -q -K - -s --proto '=https' --max-time 60 -o /dev/null -w '%{http_code}' "$$URL" || true; }
@@ -336,6 +343,7 @@ publish:
 	trap './mill shutdown >/dev/null 2>&1 || true' EXIT; \
 	$(MODULE_GUARD); \
 	$(SOURCE_RELEASE_ENV); \
+	unset MILL_TESTS_PUBLISH_DRY_RUN; \
 	for V in MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD MILL_PGP_SECRET_BASE64 MILL_PGP_PASSPHRASE; do \
 	  if [ -z "$${!V}" ]; then echo "[publish] $$V is not set ($(RELEASE_ENV) or the environment)"; exit 1; fi; \
 	done; \
@@ -350,7 +358,8 @@ publish:
 # The same bundle, signed, written to out/ instead of uploaded: what Central would receive. Mill
 # names a bundle only for a release version, so a SNAPSHOT dry run writes it unnamed.
 # Only MILL_TESTS_PUBLISH_DRY_RUN, a test hook of Mill's, keeps this from uploading, and
-# release-finalize builds its bundle here: the Central token is unset before Mill starts, so a Mill
+# release-finalize builds its bundle here: the Central token is unset before Mill starts, and Mill,
+# which wants credentials before it looks at the hook, gets a placeholder that is no token. A Mill
 # that no longer honours the hook fails to authenticate instead of publishing to Central.
 publish-dry-run:
 	@set -e; \
@@ -362,7 +371,8 @@ publish-dry-run:
 	unset MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD; \
 	VERSION=$$(./mill --no-daemon show release.gitVersion | tr -d '"'); \
 	case "$$VERSION" in *-SNAPSHOT) BUNDLE=();; *) BUNDLE=(--bundleName "$(BUNDLE_PREFIX)-$$VERSION");; esac; \
-	MILL_TESTS_PUBLISH_DRY_RUN=1 ./mill --no-daemon mill.javalib.SonatypeCentralPublishModule/ "$${BUNDLE[@]}"; \
+	MILL_TESTS_PUBLISH_DRY_RUN=1 MILL_SONATYPE_USERNAME=dry-run-no-upload MILL_SONATYPE_PASSWORD=dry-run-no-upload \
+		./mill --no-daemon mill.javalib.SonatypeCentralPublishModule/ "$${BUNDLE[@]}"; \
 	echo "[publish-dry-run] bundle in $(DRY_RUN_DIR)"
 
 # Refuses when the version at HEAD is not a release, or when any of its artifacts is already on
@@ -420,6 +430,7 @@ release-preflight:
 release-bundle:
 	@set -eo pipefail; \
 	$(TAG_VERSION); \
+	$(CENTRAL_STARTED_GUARD); \
 	if [ -e "$$B" ] || [ -L "$$B" ]; then echo "[bundle] $$B exists already: a release is built and signed once"; exit 1; fi; \
 	$(CENTRAL_GUARD); \
 	$(MAKE) --no-print-directory publish-dry-run; \
@@ -447,6 +458,7 @@ release-bundle:
 publish-github:
 	@set -eo pipefail; \
 	$(TAG_VERSION); \
+	$(CENTRAL_STARTED_GUARD); \
 	$(EMBARGO_GUARD); \
 	if [ ! -d "$$B" ] || [ -L "$$B" ]; then echo "[publish-github] no bundle for $$VERSION: make release-bundle"; exit 1; fi; \
 	if [ -e "$$B/UPLOAD_STARTED" ]; then \

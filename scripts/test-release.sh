@@ -316,7 +316,8 @@ case "\$*" in
   "--no-daemon show release.gitVersion") echo '"$V"';;
   "--no-daemon mill.javalib.SonatypeCentralPublishModule/"*)
     for v in MILL_SONATYPE_USERNAME MILL_SONATYPE_PASSWORD MILL_PGP_SECRET_BASE64 MILL_PGP_PASSPHRASE MILL_TESTS_PUBLISH_DRY_RUN; do
-      if [ -n "\${!v+x}" ]; then echo "\$v set"; else echo "\$v unset"; fi
+      if [ "\${!v-}" = dry-run-no-upload ]; then echo "\$v placeholder"
+      elif [ -n "\${!v+x}" ]; then echo "\$v set"; else echo "\$v unset"; fi
     done > "$MLOG"
     echo "args \$*" >> "$MLOG"
     if [ -e "$B.CENTRAL_UPLOAD_STARTED" ]; then echo "marker before mill" >> "$MLOG"; fi;;
@@ -332,15 +333,15 @@ ARGS="args --no-daemon mill.javalib.SonatypeCentralPublishModule/ --bundleName $
 
 rm -f "$MLOG"
 expect "publish-dry-run runs with the release env" 0 "bundle in" "${M[@]}" publish-dry-run "RELEASE_ENV=$W/release.env"
-saw "MILL_SONATYPE_USERNAME unset" && saw "MILL_SONATYPE_PASSWORD unset" \
-  && pass "publish-dry-run: the Central token from the release env never reaches Mill" || fail "publish-dry-run: Mill saw the Central token"
+saw "MILL_SONATYPE_USERNAME placeholder" && saw "MILL_SONATYPE_PASSWORD placeholder" \
+  && pass "publish-dry-run: Mill gets a placeholder, never the Central token from the release env" || fail "publish-dry-run: Mill saw the Central token, or no placeholder"
 saw "MILL_PGP_SECRET_BASE64 set" && saw "MILL_PGP_PASSPHRASE set" && saw "MILL_TESTS_PUBLISH_DRY_RUN set" \
   && pass "publish-dry-run: Mill gets the release key and the dry-run switch" || fail "publish-dry-run: Mill lacks the key or the switch"
 saw "$ARGS" && pass "publish-dry-run: Mill gets the bundle name and no other argument" || fail "publish-dry-run: Mill's arguments: $(grep '^args' "$MLOG")"
 rm -f "$MLOG"
 MILL_SONATYPE_USERNAME=env-user MILL_SONATYPE_PASSWORD=env-token "${M[@]}" publish-dry-run >/dev/null 2>&1
-saw "MILL_SONATYPE_USERNAME unset" && saw "MILL_SONATYPE_PASSWORD unset" \
-  && pass "publish-dry-run: nor does a Central token from the environment" || fail "publish-dry-run: Mill saw the Central token from the environment"
+saw "MILL_SONATYPE_USERNAME placeholder" && saw "MILL_SONATYPE_PASSWORD placeholder" \
+  && pass "publish-dry-run: nor a Central token from the environment" || fail "publish-dry-run: Mill saw the Central token from the environment"
 rm -f "$MLOG"; chmod 640 "$W/release.env"
 expect "publish-dry-run refuses a release env others can read" 1 "mode 600" "${M[@]}" publish-dry-run "RELEASE_ENV=$W/release.env"
 chmod 600 "$W/release.env"; ln -s "$W/release.env" "$W/link.env"
@@ -358,20 +359,23 @@ saw "MILL_PGP_SECRET_BASE64 unset" \
 # release-abort above removed the tag; the release is at it again.
 git -C "$G" -c user.name=Test -c user.email=test@example.invalid -c tag.gpgsign=false tag -a "v$V" -m test
 rm -rf "$W/served/taiheiframework"; echo "$V" > "$G/.release-embargo"; rm -f "$MLOG"
-expect "publish uploads an embargoed version to Central" 0 "to Maven Central" "${M[@]}" publish "RELEASE_ENV=$W/release.env"
+expect "publish uploads an embargoed version to Central" 0 "to Maven Central" env MILL_TESTS_PUBLISH_DRY_RUN=1 "${M[@]}" publish "RELEASE_ENV=$W/release.env"
 [ -s "$B.CENTRAL_UPLOAD_STARTED" ] && saw "marker before mill" \
   && pass "publish marked the Central upload before Mill started" || fail "publish did not mark the Central upload before Mill"
 saw "$ARGS" && pass "publish: Mill gets the bundle name and no other argument" || fail "publish: Mill's arguments: $(grep '^args' "$MLOG")"
 saw "MILL_SONATYPE_USERNAME set" && saw "MILL_TESTS_PUBLISH_DRY_RUN unset" \
-  && pass "publish gives Mill the Central token, and no dry-run switch" || fail "publish: Mill's environment"
+  && pass "publish gives Mill the Central token, and no dry-run switch, not even an inherited one" || fail "publish: Mill's environment"
 rm -f "$MLOG"
 expect "publish never starts the Central upload of a version twice" 1 "started before" "${M[@]}" publish "RELEASE_ENV=$W/release.env"
 [ ! -e "$MLOG" ] && pass "and Mill did not run" || fail "Mill ran for a second Central upload"
+rm -f "$G/.release-embargo"
+expect "release-bundle never signs again a version signed for Central" 1 "never signed again" "${M[@]}" release-bundle
+expect "publish-github never uploads a version signed for Central" 1 "never signed again" "${M[@]}" publish-github
 printf '{"currentVersion":"0.0.0","newVersion":"%s","releaseType":"patch","branch":"main","head":"x","embargo":true}\n' "$V" > "$G/.release-state.json"
 expect "release-abort undoes nothing once the Central upload started" 1 "may be final there" "${M[@]}" release-abort
 git -C "$G" rev-parse -q --verify "refs/tags/v$V" >/dev/null && [ -e "$G/.release-state.json" ] \
   && pass "the tag and the release state stay" || fail "release-abort removed the tag or the state"
-rm -f "$G/.release-state.json" "$G/.release-embargo" "$B.CENTRAL_UPLOAD_STARTED"
+rm -f "$G/.release-state.json" "$B.CENTRAL_UPLOAD_STARTED"
 
 [ "$FAILED" = 0 ] && echo "[release-test] all checks passed" || echo "[release-test] FAILED"
 exit "$FAILED"
